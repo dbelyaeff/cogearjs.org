@@ -51,13 +51,3 @@ The same as for the personal usage.
 
 **Cogear.JS** is absolutely free for education usage (universities, schools, etc) and is licensed under [MIT](#mit-license).
 
-# Donate
-
-If **Cogear.JS** helps you to earn money or even if you just want to give thanks me for the work, please donate:
-* **BTC**
-* **ETH**
-* **ZCash**
-* **Yandex.Money** 41001122128423
-* **VISA/Mastercard** 5106 2180 3042 8486
-
-
