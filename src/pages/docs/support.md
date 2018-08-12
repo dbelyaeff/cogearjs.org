@@ -4,7 +4,7 @@ layout: docs
 js:
 	- js/docs.js
 ---
-# Support
+# Link
 If you want to support **Cogear.JS**, please leave a link to the official site in your site footer:
 ```html
 Proudly built with <a href="https://cogearjs.org">Cogear.JS</a>
