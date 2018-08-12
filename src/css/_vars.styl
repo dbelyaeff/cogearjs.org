@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:900')
+$purple = #662D8C
+$light_purple = #852D91
+$breakpoints = {
+	hd: 1280px
+	desktop: 1024px
+	tablet: 768px
+	mobile: 400px
+}
+.navbar-menu
+	a.navbar-item:hover
+		background: transparent !important
+		color: #FFF !important
+		text-decoration: underline
+	&.is-active
+		@media(max-width: $breakpoints.desktop)
+			background-color: transparent !important
+			padding 0
+			a.navbar-item
+				border-top: 1px solid rgba(255,255,255,.3)
+			a.navbar-item:hover
+				color: $purple
+				background: rgba(255,255,255,.1) !important
+footer
+	background: linear-gradient(45deg,#000,#1a1421)
+	color: #FFF
+	padding: 30px
+	p#copyleft
+		text-align: right
+		@media(max-width: $breakpoints.tablet)
+			text-align center
+		a
+			font-family: 'Montserrat', sans-serif
+			color: #FFF
+			&:hover
+				color: purple

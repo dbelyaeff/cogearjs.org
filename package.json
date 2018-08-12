@@ -1,0 +1,8 @@
+{
+  "name": "cogearjs.org",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://gitlab.com/CuamckuyKot/cogearjs.org",
+  "author": "Dmitriy Beliaev <admin@cogear.ru> (https://cogear.org)",
+  "license": "MIT"
+}

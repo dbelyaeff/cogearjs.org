@@ -1,0 +1,29 @@
+doctype html
+head
+	title= title
+	link(rel="shortcut icon" href="/favicon.png" type="image/png")
+	block head
+body
+	navbar.navbar#nav(role="navigation" aria-label="main navigation")
+		.navbar-brand 
+				a.navbar-item.logo(href="/") COGEAR.JS
+				a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="menu")
+					span(aria-hidden="true")
+					span(aria-hidden="true")
+					span(aria-hidden="true")
+		.navbar-menu.animated.faster#menu
+			.navbar-start
+			.navbar-end
+				a.navbar-item(href="/docs") Docs
+				a.navbar-item(href="/blog") Blog
+				a.navbar-item(href="/videos") Videos
+				a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
+				a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
+				a.navbar-item(href="/docs/license") License
+				
+	block content
+		!= content
+	block footer
+		footer
+			p#copyleft.
+				Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018

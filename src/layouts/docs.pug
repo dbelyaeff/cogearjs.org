@@ -1,0 +1,50 @@
+mixin link(href,text)
+	li
+		a(href="/"+href class=(path==href+'/index.html' ? "is-active" : ''))= text
+		if block
+			ul.menu-list
+				block
+doctype html
+head
+	block head
+		title= title + " | Documentation | Cogear.JS - modern static sites generator"
+		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		link(rel="shortcut icon" href="/favicon.png" type="image/png")
+body
+	block content
+		nav.navbar(role="navigation" aria-label="main navigation")
+			.navbar-brand 
+				.navbar-item: a(href="/") COGEAR.JS
+				a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="menu")
+					span(aria-hidden="true")
+					span(aria-hidden="true")
+					span(aria-hidden="true")
+			.navbar-menu.animated.faster#menu
+				.navbar-start
+					.navbar-item: a(href="/docs") Docs
+				.navbar-end
+					a.navbar-item(href="/blog") Blog
+					a.navbar-item(href="/videos") Videos
+					a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
+					a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
+					a.navbar-item(href="https://github.com/codemotion/cogear.js/wiki") Wiki
+					a.navbar-item(href="/docs/license") License
+		main
+			aside.menu
+				p.menu-label v0.1
+				ul.menu-list
+					+link("docs","Getting started")
+					+link("docs/workflow","Workflow")
+					+link("docs/themes","Themes")
+					+link("docs/plugins","Plugins")
+					+link("docs/webpack","Webpack")
+					+link("docs/deploy","Deploy")
+					+link("docs/license","License")
+			section.markdown-body
+				!= content
+		block footer
+			footer
+				p#copyleft.
+					Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018
+					

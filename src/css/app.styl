@@ -1,0 +1,161 @@
+@import './_vars.styl'
+@keyframes bg { 
+    0%{background-position:70% 0%}
+    50%{background-position:31% 100%}
+    100%{background-position:70% 0%}
+}
+body
+	background #FFF
+	font-family "Nunito", sans-serif;
+	font-size 100%
+	min-height 100vh
+.navbar
+	z-index 100
+	user-select: none
+	position fixed !important
+	top 0
+	width 100vw
+	background transparent !important
+	transition background 2s ease-out
+	.navbar-brand 
+		a
+			color #FFF !important
+			&.logo
+				transform: translateY(-120%)
+				transition transform .5s ease-out
+				font-weight: bold
+				font-family: 'Montserrat', sans-serif;
+				font-size: 1.4em
+				text-shadow: 0px 1px 3px rgba(0,0,0,1)
+	a.navbar-item
+		color #FFF
+	a.navbar-item:hover
+			background transparent !important
+			text-decoration underline
+			color #FFF !important
+	&.active
+		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		background-size: 400% 400%;
+		animation: bg 5s ease infinite;
+		transition background 2s ease-out 1s
+		.navbar-brand
+			a.logo
+				transform: translateY(0)
+#s1
+	width 100vw
+	height 100vh
+	display flex
+	flex-direction column
+	justify-content space-between
+	align-items center
+	user-select: none
+	background: linear-gradient(45deg,#522262,$purple,$light_purple)
+	background-size: 400% 400%;
+	animation: bg 15s ease infinite;
+	position relative
+	overflow hidden
+	&::before
+	&::after
+		position absolute
+		bottom 0
+		background #FFF
+		content: ' '
+		width 110vw
+		height 100vh
+		border-radius  500em
+		// filter: blur(2px)
+		// box-shadow -1px 10px 3px rgba(0,0,0,.1)
+		opacity .1
+		z-index 1
+	&::before
+		right 0
+		transform rotate(0deg) translate(50%,70%)
+	&::after
+		left 0
+		transform rotate(0deg) translate(-50%,70%)
+	header
+		text-align center
+		color #FFF
+		#logo
+			font-family: 'Montserrat', sans-serif;
+			font-size 4rem
+			text-shadow 2px 2px 3px rgba(0,0,0,.8)
+			position relative
+			&::after
+				content: ' '
+				width 100%
+				height 200px
+				transform rotate3D(0,1.2,1,180deg) scale(0.8) translate(0,100px);
+				z-index 0
+				transition transform 1s ease-out
+				border-radius 500rem
+				position absolute
+				bottom -150px
+				left 0
+				background: rgba(0,0,0,.05)
+		.description
+			text-shadow 1px 1px 1px rgba(0,0,0,1)
+			font-size 1.2rem
+#s2
+	z-index 2
+	background #FFF
+	min-height 50vh
+	.features
+		margin 50px 0
+		display grid
+		grid-template-columns 1fr 1fr 1fr
+		grid-column-gap 2em
+		grid-row-gap 2em
+		.feature
+			min-height 200px
+			header
+				color #000
+				font-weight bold
+				font-size 1.4em
+				svg
+					color rgba(0,0,0,.5) !important
+.block
+	padding 20px
+	.centered
+		text-align center
+	.box
+		back
+	img
+		margin 15px 0
+	h1,h2,h3,h4,h5
+		color black
+	h1
+		font-size 2em !important
+	h2
+		font-size 1.9em !important
+	h3
+		font-size 1.8em !important
+.scroll-downs { 
+  width: 30px;
+  height: 55px;
+	margin-bottom: 0px !important
+}
+.mousey {
+  width: 3px;
+	padding: 5px 10px;
+  height: 25px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
