@@ -80,8 +80,35 @@ cogear dev # use "dev" argument to run webpack-dev-server with hot updates.
 ```
 # Options
 All available options can be seen via `--help` (or it's shortcut `-h`) command.
-<pre id="help" v-show="help"><code class="nohighlight" ref="code">> cogear -h
+```bash
+> cogear -h
 
-{{help}}</code></pre>
+Cogear.JS – modern static websites generator
 
+Usage: cogear [command]
+
+Runs in production mode by defaults (without command).
+
+Options:
+
+	-h, --help          output usage information
+	-s, --src           set source directory # default: ./src
+	-o, --output        set output directory # default: ./public
+	-h, --host          set host for local server # default: localhost
+	-p, --port          set port for local server # default: 9000
+	-m, --mode          set mode (alternative to commands) # default: production
+	-v, --verbose       set webpack verbose # default: false
+
+Commands:
+
+	[production]           run build and starts static server # optional, default, no hot reload on changes
+	dev                    run dev server # hot reload for pages, scripts, styles
+	new [sitename]         generate new site
+	deploy [preset]        deploy site to server
+	plugin [plugin-name]   generate plugin boilerplate
+	theme  [theme-name]    generate theme boilerplate
+
+For more information visit:
+https://cogearjs.org
+```
 Now let's take a look at source dir structure.
