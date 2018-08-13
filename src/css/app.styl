@@ -8,7 +8,11 @@ body
 	background #FFF
 	font-family "Nunito", sans-serif;
 	font-size 100%
+	@media(max-width $breakpoints.mobile)
+			font-size 80% !important
 	min-height 100vh
+.brand
+		font-family: 'Montserrat', sans-serif;
 .navbar
 	z-index 100
 	user-select: none
@@ -79,6 +83,8 @@ body
 		#logo
 			font-family: 'Montserrat', sans-serif;
 			font-size 4rem
+			@media(max-width $breakpoints.tablet)
+					font-size 3rem
 			text-shadow 2px 2px 3px rgba(0,0,0,.8)
 			position relative
 			&::after
@@ -96,6 +102,8 @@ body
 		.description
 			text-shadow 1px 1px 1px rgba(0,0,0,1)
 			font-size 1.2rem
+			@media(max-width $breakpoints.tablet)
+				font-size 1.1rem
 #s2
 	z-index 2
 	background #FFF
@@ -106,8 +114,14 @@ body
 		grid-template-columns 1fr 1fr 1fr
 		grid-column-gap 2em
 		grid-row-gap 2em
+		@media(max-width $breakpoints.tablet)
+			grid-template-columns 1fr 1fr
+		@media(max-width $breakpoints.mobile)
+				grid-template-columns 1fr
 		.feature
 			min-height 200px
+			@media(max-width $breakpoints.mobile)
+					min-height 50px
 			header
 				color #000
 				font-weight bold
@@ -159,3 +173,35 @@ body
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
 }
+
+
+a.action
+	color #FFF
+	z-index 100
+	// font-family: 'Montserrat', sans-serif;
+	font-size 1.2em
+	border 2px solid rgba(255,255,255,1)
+	border-radius 3em
+	padding 10px
+	background linear-gradient(45deg,$light_purple,$purple)
+	margin-bottom -20px
+	width 250px !important
+	display block
+	text-align center
+	transition: transform 1s ease-out 1s, box-shadow .3s ease-in-out .5s;
+	box-shadow 0px 3px 5px rgba(0,0,0,.3)
+	&:hover
+		box-shadow 0px 5px 5px rgba(0,0,0,.4)
+		transition: transform 1s ease-out, box-shadow .5s ease-in-out;
+		transform translate(0,-10px)
+.spacer
+		margin 30px 0
+		border-top 1px solid rgba(0,0,0,.1)
+.lead
+		&.big
+			font-size 1.6em
+#install
+		display flex
+		align-items center
+		justify-content:  center
+		margin 15px

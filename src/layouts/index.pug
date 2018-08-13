@@ -1,7 +1,8 @@
 doctype html
 head
 	title= title
-	link(rel="shortcut icon" href="/favicon.png" type="image/png")
+	link(rel="shortcut icon" href="~favicon.png" type="image/png")
+	meta(content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1" name="viewport")
 	block head
 body
 	navbar.navbar#nav(role="navigation" aria-label="main navigation")
@@ -20,10 +21,11 @@ body
 				a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
 				a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
 				a.navbar-item(href="/docs/license") License
+				.navbar-item v1.0.0
 				
 	block content
 		!= content
 	block footer
 		footer
 			p#copyleft.
-				Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018
+				Proudly built with <a href="https://cogearjs.org" class="brand">Cogear.JS</a> © 2018

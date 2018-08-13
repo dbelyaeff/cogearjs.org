@@ -1,18 +1,26 @@
 ---
 title: 'Cogear.JS – modern static websites generator'
+version: 1.0.0
 ---
 section#s1
 	span
 	header
 		#logo.animated.zoomIn Cogear.JS
 		.description: span
+	
+	a.action(href="/docs/") Get Started &rarr;
+		//- #version= 'v'+version
 	.scroll-downs: .mousey: .scroller
 section.block#s2
 	.container
-		h2.centered(data-aos="fade-up") How fast can you build a site?	
+		h2.centered(data-aos="fade-up") How fast can you create a site?	
 		.centered
-			img(src="http://via.placeholder.com/600x300" data-aos="flip-up")
-		h2.centered(data-aos="fade-up") Why sometimes static sites are better then CMS:
+			img(src="~images/term.svg" data-aos="flip-up")
+		p.lead.centered(data-aos="zoom-in").
+			In less than a second. <br>
+			All you have left to do is to built and deploy it to the server.
+		.spacer(data-aos="flip-left")
+		h2.centered(data-aos="fade-up") Why you may want to use <span class="brand">Cogear.JS</span>:
 		.features
 			.feature(data-aos="fade-right")
 				header <i class="fas fa-rocket"></i> Blazing fast
@@ -39,7 +47,7 @@ section.block#s2
 				p.
 					Generate hundreeds of pages for a few seconds. Easily can be used for blogging.
 			.feature(data-aos="fade-right")
-				header <i class="fas fa-database"></i> No database required
+				header <i class="fas fa-database"></i> No database is required
 				p.
 					All pages data neede for compilation is stored in the filesystem. Database will never fails. No errors on server after site is being deployed.
 			.feature(data-aos="fade-up")
@@ -50,3 +58,8 @@ section.block#s2
 				header <i class="fas fa-cloud-upload-alt"></i> Easily deployed
 				p.
 					Create a preset and deploy your site to the favorite hosting with a touch of your fingers.
+		.spacer(data-aos="flip-right")
+		p.lead.big.centered(data-aos="zoom-in").
+			Just try it. Install. Make a first site in a minutes.
+		#install
+			a.action(href="/docs#installation" data-aos="flip-down") How to install &rarr;
