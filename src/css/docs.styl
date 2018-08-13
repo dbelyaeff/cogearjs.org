@@ -12,6 +12,11 @@ nav.navbar
 		color: #FFF
 		&:hover
 			text-decoration: underline
+.menu-wrapper
+	position: sticky !important
+	top 10px
+	overflow auto
+	max-height 100vh
 main
 	display: flex
 	justify-content: center
@@ -30,9 +35,8 @@ main
 		.menu-label
 			padding-left: 10px
 		> ul
+			overflow auto
 			margin-top: 10px !important
-			position: sticky !important
-			top: 0px
 			> li
 				> a
 					&.is-active
