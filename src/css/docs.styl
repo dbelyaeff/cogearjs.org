@@ -70,7 +70,15 @@ main
 	h4
 		font-size: 1.1em !important
 h1,h2,h3,h4,h5
-	> a
+	&:hover
+		> a.link
+			opacity 1
+			transform translate(0,0)
+	> a.link
+		opacity 0
+		transform translate(10px,0)
+		display inline-block
+		transition opacity .4s ease-in, transform .3s ease-out
 		color rgba(0,0,0,.1) !important
 		margin-left 5px
 		font-family: 'Montserrat', sans-serif

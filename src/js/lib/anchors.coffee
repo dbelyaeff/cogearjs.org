@@ -10,5 +10,6 @@ export default class Anchors
 				anchor = document.createElement 'a'
 				anchor.innerHTML = '<i class="fas fa-link"></i>'
 				anchor.href = '#' + h.id
+				anchor.classList.add 'link'
 				h.appendChild(anchor)
 			resolve()
