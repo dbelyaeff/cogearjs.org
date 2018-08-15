@@ -10,7 +10,7 @@ It's inspired by [Jekyll](https://jekyllrb.com) and others, but built on the top
 
 Providing awesome experience of on-the-fly hot reloading to instantly implementing any changes.
 
-<article class="message is-info">
+<article class="message is-info is-desktop">
   <div class="message-body">Use arrow keys <button>&larr;</button> <button>&rarr;</button> to navigate through the docs.</div>
 </article>
 
@@ -72,43 +72,57 @@ After that go to site dir:
 ```bash
 cd ~/Sites/awesome-static-site
 ```
-And start up **Cogear.JS** in serve mode.
+And start up **Cogear.JS** in prefered mode.
 ```bash
-cogear # call this command to run production mode
-# or
-cogear dev # use "dev" argument to run webpack-dev-server with hot updates.
+> cogear # run in develompent mode with hot-reload – by default
+
+> cogear build # build a site
+
+> cogear production # build a site and run local server
+
+> cogear deploy # deploy site to the default server
 ```
 # Options
 All available options can be seen via `--help` (or it's shortcut `-h`) command.
 ```bash
 > cogear -h
 
-Cogear.JS – modern static websites generator
+╓─────────────────────────────────────────────────────────────╖
+║                                                             ║
+║                                                             ║
+║        Cogear.JS – modern static websites generator.        ║
+║                                                             ║
+║                    https://cogearjs.org                     ║
+║                                                             ║
+╙─────────────────────────────────────────────────────────────╜
 
 Usage: cogear [command]
 
-Runs in production mode by defaults (without command).
+Runs in development mode by default (without [command]).
 
 Options:
 
-	-h, --help          output usage information
-	-s, --src           set source directory # default: ./src
-	-o, --output        set output directory # default: ./public
-	-h, --host          set host for local server # default: localhost
-	-p, --port          set port for local server # default: 9000
-	-m, --mode          set mode (alternative to commands) # default: production
-	-v, --verbose       set webpack verbose # default: false
+  -h, --help          output usage information
+  -s, --src           set source directory, default: ./src
+  -o, --output        set output directory, default: ./public
+  -h, --host          set host for local server, default: localhost
+  -p, --port          set port for local server, default: 9000
+  -o, --open          if set to false, browser will not be opened after build, default: false
+  -v, --verbose       set webpack verbose mode, default: false
 
 Commands:
 
-	[production]           run build and starts static server # optional, default, no hot reload on changes
-	dev                    run dev server # hot reload for pages, scripts, styles
-	new [sitename]         generate new site
-	deploy [preset]        deploy site to server
-	plugin [plugin-name]   generate plugin boilerplate
-	theme  [theme-name]    generate theme boilerplate
+  command   (alias)     [optional]      description
+
+  [dev]        (d)                     run dev server # hot-reload for pages, scripts, styles [DEFAULT]
+  production   (p)                     run build and starts static server
+  build        (b)                     run build
+  deploy       (d)       [preset]      deploy site to server
+  new          (n)       [site-name]   generate new site
+  plugin       (p)       [plugin-name] generate plugin boilerplate
+  theme        (t)       [theme-name]  generate theme boilerplate
 
 For more information visit:
 https://cogearjs.org
 ```
-Now let's take a look at source dir structure.
+Let's take a look at the workflow.

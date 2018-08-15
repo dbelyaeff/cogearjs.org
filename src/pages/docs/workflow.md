@@ -17,7 +17,7 @@ All external (remote) and internal(local or from `node_modules`) modules should 
 
 # Build
 To build static site **Cogear.JS** performs next steps:
-1. Reads site config from `./config.json`.
+1. Reads site config from `./config.yaml` (`.js`,`.json` formats are also available).
 2. Searches `source` directory `pages` subfolder for pages. (default: `./src/pages`)
 3. Reads pages. 
 Available page formats: `.md`,`.pug`,`.html`,`.ejs`,`.hbs`.
@@ -31,25 +31,33 @@ Assets are: `js`,`coffee`,`css`,`sass`,`scss`,`stylus`,`less`,`Vue`,`jsx`,`fonts
 
 
 ## Config
-Config is a simple JSON-file located at `./config.json`.
-```json
-{
-  "site": {
-    "title": "Cogear.JS – modern site generator (Node.JS/Webpack)"
-  },
-  "theme": "default"
-}
+Config is a simple JSON-file located at `./config.yaml`.
+```yaml
+site:
+  title: Cogear.JS – modern static websites generator
+theme: default
 ```
+
 If `page` title is not defined then site config title will be used.
 
 Pay attention to the `theme` property as it defines basic layout and can be also used to load scripts, styles and other assets.
 
 # Modes
-When **Cogear.JS** is called from command line it starts in `production` mode.
+When **Cogear.JS** is called from command line it starts in `development` mode.
+
+## Development
+```bash
+> cogear # runs in devemopment mode by default
+```
+This mode peforms:
+1. Pages build and watch for pages change.
+2. Start [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server), which will instantly update in-browser pages, scripts and styles on the fly with `hot-reload` module.
+
+It handles all assets in memory, so there is no output in physical file system in this mode. 
 
 ## Production
 ```bash
-> cogear # run production mode by default
+> cogear production # runs in production mode
 ```
 This mode performs:
 1. Pages build.
@@ -58,16 +66,12 @@ This mode performs:
 
 It should be called before [deploy](/docs/deploy) process in order output files to be built in physical file system.
 
-## Development
+# Build
 ```bash
-> cogear dev # run dev mode with param
+> cogear build
 ```
-This mode peforms:
-1. Pages build and start watcher to listen for pages changes.
-2. Start [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) which will instantly update in-browser pages, scripts and styles on the fly with `hot-reload` module.
-3. Local server is server by [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server).
 
-It handles all files in memory, so there is no output in physical file system in this mode. 
+Only build pages and perform Webpack assets compilation.
 
 
 # Source
@@ -99,7 +103,7 @@ import(/* webpackPrefetch: true*/'https://cdnjs.cloudflare.com/ajax/libs/bulma/0
 // Either remote or local scripts, styles and other resources (like fonts) can be loaded
 import(/* webpackChunkName: "styles", webpackPrefetch: true, webpackPreload: true*/'./css/app.styl')
 // You can even import your theme entry script if it's necessary
-import('@/theme.js')
+import('@/js/script.js')
 // `@` is an alias for current theme folder
 // `#` is an alias for project root folder
 ```
