@@ -12,6 +12,7 @@ import NavButtons from './lib/navbuttons'
 import Anchors from './lib/anchors'
 import SmoothScroll from 'smooth-scroll'
 import './lib/burger.js'
+import './lib/version.js'
 window.addEventListener('load',()=>{
 	hljs.initHighlightingOnLoad()
 	document.querySelectorAll("pre code").forEach(block=>{

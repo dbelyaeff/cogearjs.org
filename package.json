@@ -19,5 +19,8 @@
     "throttle-debounce": "^2.0.1",
     "typed.js": "^2.0.9",
     "vue": "^2.5.17"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0"
   }
 }

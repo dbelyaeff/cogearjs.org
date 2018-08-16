@@ -9,6 +9,7 @@ import { throttle } from 'throttle-debounce'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './js/lib/burger.js'
+import './js/lib/version.js'
 document.addEventListener('DOMContentLoaded',()=>{
 	AOS.init()
 	new Typed('.description span', {
