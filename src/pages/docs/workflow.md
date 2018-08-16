@@ -5,7 +5,7 @@ js:
 	- js/docs.js
 ---
 # Basics
-**Cogear.JS** is a static site generator. It means that it compiles `source` folder data to static html and assets files to the `output` folder.
+**Cogear.JS** is a static websites generator. It means that it compiles `source` folder data to static html and assets files to the `output` folder.
 
 Pages in `source` folder can be provided in different formats: `.md`,`.pug`,`.html`,`.ejs`,`.hbs`.
 
@@ -15,8 +15,8 @@ Main script `app.js` is bundled with every page, but additional per page scripts
 
 All external (remote) and internal(local or from `node_modules`) modules should be imported from scripts.
 
-# Build
-To build static site **Cogear.JS** performs next steps:
+# Process
+To build a static website **Cogear.JS** do next:
 1. Reads site config from `./config.yaml` (`.js`,`.json` formats are also available).
 2. Searches `source` directory `pages` subfolder for pages. (default: `./src/pages`)
 3. Reads pages. 
@@ -42,29 +42,39 @@ If `page` title is not defined then site config title will be used.
 
 Pay attention to the `theme` property as it defines basic layout and can be also used to load scripts, styles and other assets.
 
+<article class="message is-warning">
+  <div class="message-body">
+    Config data is available in runtime via <code>cogear.config</code> object. Usefull for <a href="/docs/plugins">plugins</a>.
+   </div>
+</article>
+
+
 # Modes
-When **Cogear.JS** is called from command line it starts in `development` mode.
+When **Cogear.JS** is called from command line it runs in `development` mode.
 
 ## Development mode
 ```bash
 > cogear # runs in devemopment mode by default
 ```
 This mode peforms:
-1. Pages build and watch for pages change.
-2. Start [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server), which will instantly update in-browser pages, scripts and styles on the fly with `hot-reload` module.
+1. Build pages and watch for changes.
+2. Start [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) which will instantly update in-browser pages, scripts and styles on the fly with `hot-reload` module.
 
-It handles all assets in memory, so there is no output in physical file system in this mode. 
+![production](~images/docs/workflow/dev.svg)
+
+It handles all assets in memory (no output in real file system, don't panic). 
 
 ## Production mode
 ```bash
 > cogear production # runs in production mode
 ```
 This mode performs:
-1. Pages build.
+1. Build pages.
 2. Assets compilation and injection to pages with [Webpack](https://webpack.js.org).
 3. Starting local server to check out the results.
 
-It should be called before [deploy](/docs/deploy) process in order output files to be built in physical file system.
+![production](~images/docs/workflow/production.svg)
+
 
 ## Build mode
 ```bash
@@ -72,6 +82,21 @@ It should be called before [deploy](/docs/deploy) process in order output files 
 ```
 
 Only build pages and perform Webpack assets compilation.
+
+![production](~images/docs/workflow/build.svg)
+
+> It should be called __before__ [deploy](/docs/deploy) process in order output files to be built.
+
+## Deploy mode
+```bash
+> cogear deploy [preset]
+```
+
+Fires deploy process. 
+
+![deploy](~images/docs/workflow/deploy.svg)
+
+More info at [Deploy](/docs/deploy) page.
 
 
 # Source
@@ -84,11 +109,13 @@ Basic structure:
 |  layouts/     # optional
 |    index.pug  # optional
 |  pages/       # required
-|    index.md   # site index page
-|  app.js       # required
+|    index.md   # required, site index page
+|  app.js       # required, entry point
 ```
 
-The required files are: `app.js` and `pages/index.md` (`Markdown` or [any other format](#pages)).
+Required files are: `app.js` and `pages/index.md` (`Markdown` or [any other format](#pages)).
+
+Basically it's all you need to build your first site.
 
 ## Main script `app.js`
 
@@ -99,9 +126,9 @@ All you internal and external scripts may be imported there.
 Example:
 ```javascript
 // Look at webpack-specific comments
-import(/* webpackPrefetch: true*/'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css')
+import('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css')
 // Either remote or local scripts, styles and other resources (like fonts) can be loaded
-import(/* webpackChunkName: "styles", webpackPrefetch: true, webpackPreload: true*/'./css/app.styl')
+import('./css/app.styl')
 // You can even import your theme entry script if it's necessary
 import('@/js/script.js')
 // `@` is an alias for current theme folder
@@ -111,9 +138,9 @@ import('@/js/script.js')
 
 
 # Pages
-Pages are the main structure units of **Cogear.JS** generator.
+Pages are the main structure units of **Cogear.JS**.
 
-They must be located at `pages` folder of the `source` directory (default: `./src/pages`).
+They must be located in `pages` subfolder of the `source` directory (default: `./src/pages`).
 
 ## Formats (parsers)
 
@@ -128,6 +155,14 @@ Different pages can have their own file extension at the same time (but avoid th
 |  portfolio.ejs       # Compiles with EJS
 |  testimonals.hbs     # Compiles with Handlebars
 ```
+
+Page extension|Compiler
+:------------:|:--------:
+`.md`|Markdown
+`.pug`|PUG
+`.html`|EJS
+`.ejs`|EJS
+`.hbs`|Handlebars
 
 ## Metadata with [`yaml-front-matter`](https://github.com/spatie/yaml-front-matter)
 Each page can store meta-data with the help of [`yaml-front-matter`](https://github.com/spatie/yaml-front-matter) script.
@@ -241,25 +276,10 @@ import Lib from './lib.js'
 import './css/about.sass'
 ```
 
-## All pages in JSON-file
-
-For usefull cases after the build has been done (and before `Webpack` starts) all the pages are store in `./src/pages.json` file.
-
-It can be import in any entry point and used, for example, in menu building or list output.
-
-Example: `./src/app.js`
-```javascript
-import pages from "./pages.json"
-
-pages.forEach((page)=>{
-  // Do something
-})
-```
-
 # Layouts
 After the `page` content is parsed with proper formatter, system starts up to look for the layout.
 
-`Layout` can be a file of the same [formats](#formats-parsers-).
+`Layout` can be a file of the same [formats](#formats-parsers-) (with the exception of `.md`).
 
 If `layout` is not defined in `page` metadata, it will be set to `index` by default.
 
@@ -282,17 +302,25 @@ layout: index # .pug extension will be added by default
 ---
 # Page contents
 ```
-
-If `layout` is set to `false`, the `page` output will be written directly to the `output file` (__without layout__).
+If `layout` param provides extension, appropriate formatter will be used.
 
 Example:
 ```bash
 ---
 title: Index
-layout: false # layout is set to `false`, then page will be written directly to the output file
+layout: index.hbs # Handlebars compiler will be used
 ---
 # Page contents
 ```
+
+Layout extension|Compiler
+:----------:|:-----------:
+none    |   PUG
+.pug    | PUG
+.html   | EJS
+.ejs    | EJS
+.hbs    | Handlebars
+
 
 ## Layouts resolver
 Layouts can be located at current theme `layouts` folder (default: `./themes/default/layouts`) or at current site `layouts` folder (example: `./src/layouts`).
@@ -302,6 +330,10 @@ Search loop:
 2. Theme layouts  # (ex.:`./themes/default/layouts`)
 ```
 This way you can override theme layout with the current site layout.
+
+> If site config `config.theme` is set to `false`, only site `layouts` folder will be used for search.
+
+> If there is no site or theme layout, build process will be stopped.
 
 ## Page content in layout
 
@@ -318,3 +350,21 @@ Let's look and `html5` template (which also served with `EJS` compiler to make _
 </body>
 ```
 Pay attention that `content` variable must be **unescaped** as it contains raw html data, parsed from page contents.
+
+# Images
+Images in css assets (`.sass`,`.less`,`.styl`, etc) can use relative paths.
+```styl
+.bg
+  background: url('./images/bg.jpg')
+```
+Images paths in layouts and pages should be prefixed with `~` to be resolved correctly.
+```markdown
+# About
+
+![me](~images/me.jpg)
+```
+In this case prefixed image will be resolved from `./src/images/me.jpg`.
+
+Or even from `[current-theme-path]/images/me.jpg`.
+
+Images resolver works for themes as well.

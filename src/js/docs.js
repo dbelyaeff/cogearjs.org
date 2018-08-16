@@ -21,10 +21,10 @@ window.addEventListener('load',()=>{
   new AutoSubmenu()
   const anchors = new Anchors()
   anchors.init().then(()=>{
-    new SmoothScroll('main > section a[href*="#"]')
+    new SmoothScroll('section a[href*="#"]')
   })
 	new ScrollSpy({
-		selector: "main > section > h1",
+		selector: "section > h1",
 		linkSelector: "aside.menu a[href*='#']",	
 		offset: 100,
 		throttle: 50

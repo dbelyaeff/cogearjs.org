@@ -21,59 +21,66 @@ nav.navbar
 	overflow auto
 	max-height 100vh
 main
-	display: flex
-	align-items: top
-	flex-direction: row
-	justify-content: center
-	@media(max-width $breakpoints.tablet)
-		flex-direction column
+	.container
+		display: flex
+		align-items: top
+		flex-direction: row
+		justify-content: center
+		@media(max-width $breakpoints.tablet)
+			flex-direction column
+			> aside
+				// width 100% !important
+				margin-bottom 20px
+				border-bottom 1px solid rgba(0,0,0,.2)
+		@media(max-width 1120px) and (min-width: 768px)
+			justify-content: left !important
+			// > aside
+			// 	width 200px !important
+			// 	min-width 0 !important
+			// > section
+			// 	max-width 75vw !important
 		> aside
-			width 100% !important
-			margin-bottom 20px
-			border-bottom 1px solid rgba(0,0,0,.2)
-	@media(max-width 1120px) and (min-width: 768px)
-		justify-content: left !important
-		> aside
-			width 200px !important
-			min-width 0 !important
+			padding-top: 10px
+			padding-left: 0px
+			border-right: 1px solid rgba(0,0,0,.1)
+			min-width: 200px
+			margin-right: 20px
+			@media(max-width: $breakpoints.tablet)
+				margin-right 0 !important
+			.menu-label
+				padding-left: 10px
+			> ul
+				overflow auto
+				margin-top: 10px !important
+				> li
+					> a
+						&.is-active
+							background-color: light_purple !important
+							font-weight: bold
+					> ul
+						> li
+							a.is-active
+								background: rgba(0,0,0,.1) !important
+								color: black !important
 		> section
-			max-width 75vw !important
-	> aside
-		padding-top: 10px
-		padding-left: 0px
-		border-right: 1px solid rgba(0,0,0,.1)
-		min-width: 200px
-		margin-right: 20px
-		@media(max-width: $breakpoints.tablet)
-			margin-right 0 !important
-		.menu-label
-			padding-left: 10px
-		> ul
-			overflow auto
-			margin-top: 10px !important
-			> li
-				> a
-					&.is-active
-						background-color: light_purple !important
-						font-weight: bold
-				> ul
-					> li
-						a.is-active
-							background: rgba(0,0,0,.1) !important
-							color: black !important
-	> section
-		margin-top: 0px
-		flex: 1
-		min-height: 100vh
-		padding: 15px 20px 20px 0
-		border-right 1px solid rgba(0,0,0,.1)
-		@media(min-width: 1120px)
-			max-width: $breakpoints.desktop
-		@media(max-width: $breakpoints.tablet)
-			padding 5px 20px 20px
-		ul
-			li
-				list-style-type: disc
+			margin-top: 0px
+			flex: 1
+			min-height: 100vh
+			max-width 768px
+			padding: 15px 20px 20px 0
+			border-right 1px solid rgba(0,0,0,.1)
+			@media(min-width: $breakpoints.tablet)
+				width: 70vw
+			// @media(min-width: 1120px)
+			// 	max-width: $breakpoints.desktop
+			img
+				max-width 100%
+				height auto
+			@media(max-width: $breakpoints.tablet)
+				padding 5px 20px 20px
+			ul
+				li
+					list-style-type: disc
 .prevnext
 	display: flex
 	justify-content: space-between

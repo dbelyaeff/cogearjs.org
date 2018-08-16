@@ -14,37 +14,39 @@ head
 body
 	block content
 		nav.navbar(role="navigation" aria-label="main navigation")
-			.navbar-brand 
-				.navbar-item: a(href="/") COGEAR.JS
-				a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="menu")
-					span(aria-hidden="true")
-					span(aria-hidden="true")
-					span(aria-hidden="true")
-			.navbar-menu.animated.faster#menu
-				.navbar-start
-					.navbar-item: a(href="/docs") Docs
-				.navbar-end
-					a.navbar-item(href="/blog") Blog
-					a.navbar-item(href="/videos") Videos
-					a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
-					a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
-					a.navbar-item(href="https://github.com/codemotion/cogear.js/wiki") Wiki
-					a.navbar-item(href="/docs/license") License
+			.container
+				.navbar-brand 
+					.navbar-item: a(href="/") COGEAR.JS
+					a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="menu")
+						span(aria-hidden="true")
+						span(aria-hidden="true")
+						span(aria-hidden="true")
+				.navbar-menu.animated.faster#menu
+					.navbar-start
+						.navbar-item: a(href="/docs") Docs
+					.navbar-end
+						a.navbar-item(href="/blog") Blog
+						a.navbar-item(href="/videos") Videos
+						a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
+						a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
+						a.navbar-item(href="https://github.com/codemotion/cogear.js/wiki") Wiki
+						a.navbar-item(href="/docs/license") License
 		main
-			aside.menu
-				.menu-wrapper
-					p.menu-label v1.0.0
-					ul.menu-list
-						+link("docs","Getting started")
-						+link("docs/workflow","Workflow")
-						+link("docs/themes","Themes")
-						+link("docs/plugins","Plugins")
-						+link("docs/webpack","Webpack")
-						+link("docs/deploy","Deploy")
-						+link("docs/license","License")
-						+link("docs/support","Support")
-			section.markdown-body
-				!= content
+			.container
+				aside.menu
+					.menu-wrapper
+						p.menu-label v1.0.0
+						ul.menu-list
+							+link("docs","Getting started")
+							+link("docs/workflow","Workflow")
+							+link("docs/themes","Themes")
+							+link("docs/plugins","Plugins")
+							+link("docs/webpack","Webpack")
+							+link("docs/deploy","Deploy")
+							+link("docs/license","License")
+							+link("docs/support","Support")
+				section.markdown-body
+					!= content
 		block footer
 			footer
 				p#copyleft.

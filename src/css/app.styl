@@ -22,38 +22,41 @@ body
 	background transparent !important
 	transition background 2s ease-out
 	z-index 10
+	a
+		color #FFF !important
 	.navbar-menu.is-active
 		background: linear-gradient(45deg,alpha(#522262,.7),alpha($purple,.7),alpha($light_purple,.7)) !important
 		box-shadow 0px 3px 5px rgba(0,0,0,.4)
 		z-index 100
 	.navbar-brand 
-		a
-			color #FFF !important
-			&.logo
+		a.logo
+				font-weight: bold; !important
+				display  inline-block
 				transform: translateY(-120%)
-				transition transform .1s ease-out 0
-				font-weight: bold
+				transition: transform .1s ease-out 0
 				font-family: 'Montserrat', sans-serif;
 				font-size: 1.4em
 				text-shadow: 0px 1px 3px rgba(0,0,0,1)
 	a.navbar-item
-		color #FFF
+		color #FFF !important
 	a.navbar-item:hover
 			background transparent !important
 			text-decoration underline
 			color #FFF !important
 	&.active
-	&.scroll-active
 		background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
+	&.scroll-active
+		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
 		background-size: 400% 400%;
 		animation: bg 5s ease infinite;
 		transition background 2s ease-out 1s
 		.navbar-brand
-		 	background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		 	// background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
 			a.logo
 				transform: translateY(0)
 				transition transform .5s ease-out .2s
 		div.navbar-item
+			transition color 1s ease-in
 			border-top 1px solid rgba(255,255,255,.6)
 			color #FFF
 			text-align center
@@ -95,6 +98,7 @@ body
 		color #FFF
 		perspective 1000px
 		#logo
+			font-weight: bold
 			font-family: 'Montserrat', sans-serif;
 			font-size 4rem
 			@media(max-width $breakpoints.tablet)
@@ -239,12 +243,16 @@ body
 		font-size 1.2em
 		line-height  1.2em
 		text-indent 0 !important
+	.mc-field-group
+		padding 0 !important
+		margin 0 !important
 	input.action
 		display block
-		margin 0 auto
+		margin 30px auto
 		border-radius 30px
 		font-size 1.2em
 		line-height  1.2em
 		padding 10px
+		transition: transform .3s ease-out .5s, box-shadow .3s ease-in-out .5s !important
 		height 50px
 		border 3px solid #FFF

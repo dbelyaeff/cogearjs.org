@@ -5,7 +5,7 @@ js:
 	- js/docs.js
 ---
 # Basics
-Themes provide layouts and can be used to load additional scripts, styles, images and other type of assets.
+Themes **provide [layouts](/docs/workflow#layouts)** and can be used to **load additional assets** _(scripts, styles, fonts, etc)_.
 
 # Installation
 
@@ -22,35 +22,40 @@ For example, if you decided to build your own theme named `bulma` its package mu
 </article>
 
 Install themes with ease:
-```bash
+
+## From npm
+```shell
 > npm install cogear-theme-bulma
 # or 
 > yarn add cogear-theme-bulma
 ```
+## From git
+```shell
+> git clone https://github.com/codemotion/cogear-theme-bulma ./themes/bulma
+```
 
-Then edit `./config.json` file to match installed theme:
-```json
-{
-  "site": {
-    "title": "Cogear.JS – modern site generator (Node.JS/Webpack)"
-  },
-  "theme": "bulma",
-  "plugins": [
-    
-  ]
-}
+> Themes located in `./themes` folder have a higher priority over npm packaged themes.
+
+Edit `./config.yaml` to set up new theme:
+```yaml
+site:
+  title: Cogear.JS – modern static websites generator
+  description:
+  keywords: 
+theme: bulma
+# or
+theme: cogear-theme-bulma # no difference
 ```
 
 # Structure
 
-Basic theme file structure is:
+Basic file structure is:
 ```bash
 ./bulma
-|  layouts    # Layouts folder
-|  \index.pug # Index layout | required
-|  # Basic node module package.json file with theme info	
-|  package.json 
-|  README.md # Do not forget to tell other users about your theme
+|  layouts      # Layouts folder
+|  \index.pug   # Index layout | required
+|  package.json # Basic npm package.json
+|  README.md    # Do not forget to tell other users about your theme
 ```
 
 Listing: `./layouts/index.pug`
@@ -69,9 +74,9 @@ Listing: `./package.json`
 ```json
 {
 	"name": "Default Cogear.JS theme",
-	"version": "1.0",
-	"author": "Dmitriy Belyaev <admin@cogear.pro>",
-	"homepage": "https://cogear.pro"
+	"version": "1.0.0",
+	"author": "Dmitriy Belyaev <admin@cogear.org>",
+	"homepage": "https://cogearjs.org"
 }
 ```
 
@@ -93,20 +98,48 @@ Listing: `./theme.js` (theme root)
 import('https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css')
 ```
 
-And then just import it in your main `./src/app.js` script (relative to the project `root`):
+> This file will be imported automatically if exists.
 
-Listing: `./src/app.js` (project root)
-```javascript
-import('@/theme.js')
-```
-Well done! All the scripts, styles, fonts, images (and so on) will be imported automatically.
+Use it as an entry point for all other styles and scripts from your theme.
+
+Well done! 
 
 # Generator
 To generate new theme from scratch just use this command:
 ```bash
-> cogear theme new [theme-name]
+> cogear theme [theme-name]
 ```
+Where `theme-name` is a theme folder and a short name.
 
-Where `theme-name` is a theme folder and short name.
+If you located in project root, theme will be generated in `./themes` folder.
+
+If you are not, theme will be generated in __current dir__  (in case you're building npm package).
+
+
+![generator](~images/docs/themes/generator.svg)
 
 It will automatically build basic file structure for you.
+
+# Publish
+
+If you want to share your theme with **Cogear.JS** community do next:
+
+1. Place it in a standalone folder outside your project git repo and `cd` into it.
+2. Init `npm` or `yarn`.
+```shell
+> npm init
+# or
+> yarn init
+```
+2. Make sure that theme name is prefixed with `cogear-theme-` in `package.json`.
+3. Login to npm:
+```shell
+> npm login
+```
+4. Publish:
+```shell
+> npm publish
+```
+5. Done.
+
+Now you theme is packaged and is available to install for anyone in the world!

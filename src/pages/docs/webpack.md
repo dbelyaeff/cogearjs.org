@@ -14,7 +14,7 @@ Moreover it providers realtime **hot reloading** to implement all the changes th
 
 # Configs
 
-Config files both for `production` and `development` modes are located in the project root:
+Config files both for `production` and `development` modes are located into the main `cogear` package root:
 ```bash
 ./
 |  webpack.prod.js   # <= Production config
@@ -43,4 +43,4 @@ As you've noticed config files returns a function which accepts system instasnce
 
 This means that configs are called from inside the system build process.
 
-You may use `webpackConfig` hook in your [plugin](/docs/plugins) to change the config (detecting **Cogear.JS** mode with `cogear.options.mode` variable).
+You may use `webpackProd` of `webpackDev` hook in your [plugin](/docs/plugins) to change the webpacks config.
