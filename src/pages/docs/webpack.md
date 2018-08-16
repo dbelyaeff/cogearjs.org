@@ -1,6 +1,7 @@
 ---
 title: Webpack
 layout: docs
+description: Cogear.JS webpack info.
 js:
 	- js/docs.js
 ---
@@ -25,13 +26,13 @@ Config files both for `production` and `development` modes are located into the 
 Let's take a closer look at them.
 
 ## `webpack.common.js`
-__TODO: Github file__
-
-## `webpack.prod.js`
-__TODO: Github file__
+<script src="https://gist.github.com/codemotion/1296ca28650c6eb8a9854d6a3c6190fc.js"></script>
 
 ## `webpack.dev.js`
-__TODO: Github file__
+<script src="https://gist.github.com/codemotion/2b9a5cc2a896ff99d8b1cce56ff91e30.js"></script>
+
+## `webpack.prod.js`
+<script src="https://gist.github.com/codemotion/1e8e57fadbeb3bcce1d016837997a73b.js"></script>
 
 All in all it's usual [Webpack](https://webpack.js.org) config. You can edit it in your project to customize [Webpack](https://webpack.js.org) behavior. 
 

@@ -1,5 +1,6 @@
 ---
 title: Themes
+description: Cogear.JS themes documentation.
 layout: docs
 js:
 	- js/docs.js

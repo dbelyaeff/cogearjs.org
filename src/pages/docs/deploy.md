@@ -1,5 +1,6 @@
 ---
 title: Deploy
+description: How to deploy with Cogear.JS
 layout: docs
 js:
 	- js/docs.js

@@ -1,5 +1,6 @@
 ---
 title: Workflow
+description: Cogear.JS main workflow – how it works.
 layout: docs
 js:
 	- js/docs.js

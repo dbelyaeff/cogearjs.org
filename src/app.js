@@ -10,6 +10,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './js/lib/burger.js'
 import './js/lib/version.js'
+import './images/cogearjs.jpg'
 document.addEventListener('DOMContentLoaded',()=>{
 	AOS.init()
 	new Typed('.description span', {

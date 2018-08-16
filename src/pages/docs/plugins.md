@@ -1,5 +1,6 @@
 ---
 title: Plugins
+description: Cogear.JS plugins system documentation.
 layout: docs
 js:
 	- js/docs.js

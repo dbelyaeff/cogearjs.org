@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+description: Getting Started guide for Cogear.JS
 layout: docs
 js: ['js/docs.js','js/help.js']
 ---

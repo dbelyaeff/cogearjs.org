@@ -1,5 +1,6 @@
 ---
 title: Support
+description: Cogear.JS support options.
 layout: docs
 js:
 	- js/docs.js
