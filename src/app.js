@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 	window.addEventListener('scroll',throttle(100,()=>{
 		let top = (document.scrollingElement || document.documentElement).scrollTop
 		let nav = document.getElementById('nav')
+		if(document.getElementById('menu').classList.contains('is-active')){
+			return
+		}
 		if(top > s1Bottom){
 			if(!nav.classList.contains('active')) nav.classList.add('active')
 		} else  {

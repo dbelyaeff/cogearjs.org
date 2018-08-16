@@ -59,7 +59,23 @@ section.block#s2
 				p.
 					Create a preset and deploy your site to the favorite hosting with a touch of your fingers.
 		.spacer(data-aos="flip-right")
+			link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
+			#mc_embed_signup(data-aos="fade-up")
+				h2.centered(data-aos="fade-up") Join our newsletter
+				form(action="https://cogearjs.us19.list-manage.com/subscribe/post?u=697d87872e2a44b1277ec2d68&amp;id=7040c345d3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank")
+					#mc_embed_signup_scroll
+						.mc-field-group
+							label(for="mce-EMAIL") Email
+							input#mce-EMAIL.required.email(type="email" value="" name="EMAIL" required)
+						#mce-responses
+							#mce-error-response.response(style="display:none")
+							#mce-success-response.response(style="display:none")
+						div(style="position: absolute; left: -5000px;" aria-hidden="true")
+							input(type="text" name="b_697d87872e2a44b1277ec2d68_7040c345d3" tabindex="-1" value="")
+						.clear
+							input.action(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button")
+		.spacer(data-aos="flip-right")
 		p.lead.big.centered(data-aos="zoom-in").
 			Just try it. Install. Make a first site in a minutes.
-		#install
-			a.action(href="/docs#installation" data-aos="flip-down") How to install &rarr;
+		#install(data-aos="flip-down")
+			a.action(href="/docs#installation") How to install &rarr;

@@ -21,12 +21,16 @@ body
 	width 100vw
 	background transparent !important
 	transition background 2s ease-out
+	z-index 10
+	.navbar-menu.is-active
+		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		z-index 100
 	.navbar-brand 
 		a
 			color #FFF !important
 			&.logo
 				transform: translateY(-120%)
-				transition transform .5s ease-out
+				transition transform .5s ease-out .3s
 				font-weight: bold
 				font-family: 'Montserrat', sans-serif;
 				font-size: 1.4em
@@ -45,6 +49,7 @@ body
 		.navbar-brand
 			a.logo
 				transform: translateY(0)
+				transition transform .5s ease-out .2s
 #s1
 	width 100vw
 	height 100vh
@@ -53,7 +58,8 @@ body
 	justify-content space-between
 	align-items center
 	user-select: none
-	background: linear-gradient(45deg,#522262,$purple,$light_purple)
+	background: linear-gradient(45deg,#522262,#662D8C,#852D91)	
+	background-size cover
 	background-size: 400% 400%;
 	animation: bg 15s ease infinite;
 	position relative
@@ -80,6 +86,7 @@ body
 	header
 		text-align center
 		color #FFF
+		perspective 1000px
 		#logo
 			font-family: 'Montserrat', sans-serif;
 			font-size 4rem
@@ -114,8 +121,6 @@ body
 		grid-template-columns 1fr 1fr 1fr
 		grid-column-gap 2em
 		grid-row-gap 2em
-		@media(max-width $breakpoints.tablet)
-			grid-template-columns 1fr 1fr
 		@media(max-width $breakpoints.mobile)
 				grid-template-columns 1fr
 		.feature
@@ -175,9 +180,9 @@ body
 }
 
 
-a.action
+.action
 	color #FFF
-	z-index 100
+	z-index 3
 	// font-family: 'Montserrat', sans-serif;
 	font-size 1.2em
 	border 2px solid rgba(255,255,255,1)
@@ -186,11 +191,12 @@ a.action
 	background linear-gradient(45deg,$light_purple,$purple)
 	margin-bottom -20px
 	width 250px !important
-	display block
+	display inline-block
 	text-align center
 	transition: transform 1s ease-out 1s, box-shadow .3s ease-in-out .5s;
 	box-shadow 0px 3px 5px rgba(0,0,0,.3)
 	&:hover
+		color #FFF !important
 		box-shadow 0px 5px 5px rgba(0,0,0,.4)
 		transition: transform 1s ease-out, box-shadow .5s ease-in-out .1s;
 		transform translate(0,-10px)
@@ -205,3 +211,27 @@ a.action
 		align-items center
 		justify-content:  center
 		margin 40px 0 50px
+#mc_embed_signup
+	padding 0 !important
+	margin 0 !important
+	form
+		padding 0 !important
+		margin 0 !important
+		width 100%
+	h2
+		font-weight normal !important
+	input[type="email"]
+		font-family "Nunito", sans-serif !important
+		padding 10px !important
+		font-size 1.2em
+		line-height  1.2em
+		text-indent 0 !important
+	input.action
+		display block
+		margin 0 auto
+		border-radius 30px
+		font-size 1.2em
+		line-height  1.2em
+		padding 10px
+		height 50px
+		border 3px solid #FFF
