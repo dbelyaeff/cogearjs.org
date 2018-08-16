@@ -31,9 +31,9 @@ document.addEventListener('DOMContentLoaded',()=>{
 			return
 		}
 		if(top > s1Bottom){
-			if(!nav.classList.contains('active')) nav.classList.add('active')
+			if(!nav.classList.contains('scroll-active')) nav.classList.add('scroll-active')
 		} else  {
-			if(nav.classList.contains('active')) nav.classList.remove('active')
+			if(nav.classList.contains('scroll-active')) nav.classList.remove('scroll-active')
 		}
 	}))
 })

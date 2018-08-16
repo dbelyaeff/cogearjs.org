@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const $nav = document.getElementById('nav');
         // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
         el.classList.toggle('is-active');
-        $nav.classList.toggle('active');
+        if(!$nav.classList.contains('scroll-active')) $nav.classList.toggle('active');
         $target.classList.toggle('is-active')
         $target.classList.toggle('slideInRight');
       });

@@ -22,11 +22,22 @@ nav.navbar
 	max-height 100vh
 main
 	display: flex
-	justify-content: center
 	align-items: top
 	flex-direction: row
-	@media(max-width: $breakpoints.tablet)
-		flex-direction: column
+	justify-content: center
+	@media(max-width $breakpoints.tablet)
+		flex-direction column
+		> aside
+			width 100% !important
+			margin-bottom 20px
+			border-bottom 1px solid rgba(0,0,0,.2)
+	@media(max-width 1120px) and (min-width: 768px)
+		justify-content: left !important
+		> aside
+			width 200px !important
+			min-width 0 !important
+		> section
+			max-width 75vw !important
 	> aside
 		padding-top: 10px
 		padding-left: 0px
@@ -51,10 +62,13 @@ main
 							background: rgba(0,0,0,.1) !important
 							color: black !important
 	> section
-		margin-top: 10px
+		margin-top: 0px
 		flex: 1
 		min-height: 100vh
-		padding: 5px 20px 20px 0
+		padding: 15px 20px 20px 0
+		border-right 1px solid rgba(0,0,0,.1)
+		@media(min-width: 1120px)
+			max-width: $breakpoints.desktop
 		@media(max-width: $breakpoints.tablet)
 			padding 5px 20px 20px
 		ul

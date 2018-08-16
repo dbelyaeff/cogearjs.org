@@ -23,14 +23,15 @@ body
 	transition background 2s ease-out
 	z-index 10
 	.navbar-menu.is-active
-		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		background: linear-gradient(45deg,alpha(#522262,.7),alpha($purple,.7),alpha($light_purple,.7)) !important
+		box-shadow 0px 3px 5px rgba(0,0,0,.4)
 		z-index 100
 	.navbar-brand 
 		a
 			color #FFF !important
 			&.logo
 				transform: translateY(-120%)
-				transition transform .5s ease-out .3s
+				transition transform .1s ease-out 0
 				font-weight: bold
 				font-family: 'Montserrat', sans-serif;
 				font-size: 1.4em
@@ -42,14 +43,20 @@ body
 			text-decoration underline
 			color #FFF !important
 	&.active
-		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+	&.scroll-active
+		background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
 		background-size: 400% 400%;
 		animation: bg 5s ease infinite;
 		transition background 2s ease-out 1s
 		.navbar-brand
+		 	background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
 			a.logo
 				transform: translateY(0)
 				transition transform .5s ease-out .2s
+		div.navbar-item
+			border-top 1px solid rgba(255,255,255,.6)
+			color #FFF
+			text-align center
 #s1
 	width 100vw
 	height 100vh
@@ -145,10 +152,16 @@ body
 		color black
 	h1
 		font-size 2em !important
+		@media(max-width $breakpoints.mobile)
+			font-size 1.4rem !important
 	h2
 		font-size 1.9em !important
+		@media(max-width $breakpoints.mobile)
+			font-size 1.3rem !important
 	h3
 		font-size 1.8em !important
+		@media(max-width $breakpoints.mobile)
+			font-size 1.2rem !important
 .scroll-downs { 
   width: 30px;
   height: 55px;

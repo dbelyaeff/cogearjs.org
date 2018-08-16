@@ -45,7 +45,7 @@ Pay attention to the `theme` property as it defines basic layout and can be also
 # Modes
 When **Cogear.JS** is called from command line it starts in `development` mode.
 
-## Development
+## Development mode
 ```bash
 > cogear # runs in devemopment mode by default
 ```
@@ -55,7 +55,7 @@ This mode peforms:
 
 It handles all assets in memory, so there is no output in physical file system in this mode. 
 
-## Production
+## Production mode
 ```bash
 > cogear production # runs in production mode
 ```
@@ -66,7 +66,7 @@ This mode performs:
 
 It should be called before [deploy](/docs/deploy) process in order output files to be built in physical file system.
 
-# Build
+## Build mode
 ```bash
 > cogear build
 ```
