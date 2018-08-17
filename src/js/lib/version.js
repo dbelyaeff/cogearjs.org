@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 			return response.json()
 		})
 		.then(data=>{
-			console.log(data)
 			version = data.version
 			sessionStorage.setItem('version', data.version);
 			document.getElementById('version').innerText = 'v' + version
 		})
+		.catch(err => console.error(err))
 	}
 	if(version){
 		document.getElementById('version').innerText = 'v' + version
