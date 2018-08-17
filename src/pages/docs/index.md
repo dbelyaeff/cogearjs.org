@@ -99,7 +99,7 @@ And start up **Cogear.JS** in prefered mode.
 > cogear deploy # deploy site to the default server
 ```
 # Options
-All available options can be seen via `--git` (or shortcut `-h`) command.
+All available options can be seen via `--help` (or shortcut `-h`) command.
 ```bash
 > cogear -h
 

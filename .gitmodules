@@ -1,0 +1,3 @@
+[submodule "plugins/youtube"]
+	path = plugins/youtube
+	url = https://github.com/codemotion/cogear-plugin-youtube
