@@ -5,7 +5,7 @@ layout: docs
 js: ['js/docs.js','js/help.js']
 ---
 # About
-**Cogear.JS** is a static site generator build with [Node.JS](https://nodejs.org) and based on [Webpack](https://webpack.js.org) (v4.6).
+**Cogear.JS** is a static websites generator built with [Node.JS](https://nodejs.org) and based on [Webpack](https://webpack.js.org) (v4.6).
 
 It's inspired by [Jekyll](https://jekyllrb.com) and others, but built on the top of the latest frontend technologies.
 
