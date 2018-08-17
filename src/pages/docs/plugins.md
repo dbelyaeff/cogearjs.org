@@ -79,25 +79,25 @@ Listing: `cogear-plugin-compressor`
 └── plugin.js     # main scripts file
 ```
 
-Listing: `cogear-plugin-compress/package.json`
+Listing: `cogear-plugin-compressor/package.json`
 ```json
 {
 	"name": "cogear-plugin-compression",
 	"description": "Cogear.JS compression plugin. Adds compression options to webpack production config.",
 	"version": "1.0.0",
 	"author": "Dmitriy Belyaev<admin@cogearjs.org>",
-	"homepage": "https://github.com/codemotion/cogear-plugin-compression",
+	"homepage": "https://github.com/codemotion/cogear-plugin-compressor",
 	"main": "./compress.js"
 }
 ```
 
-Listing: `cogear-plugin-compress/compress.js`
+Listing: `cogear-plugin-compressor/compress.js`
 ```javascript
 const CompressionPlugin = require("compression-webpack-plugin")
 
 module.exports = {
 	apply(cogear){
-		cogear.hooks.webpackProd.tap('cogear-plugin-compress',(config)=>{
+		cogear.hooks.webpackProd.tap('cogear-plugin-compressor',(config)=>{
 			config.plugins.push(new CompressionPlugin()))
 		})
 	}
@@ -108,7 +108,7 @@ Plugin script should return basic object with required `apply` method which reci
 
 That's it.
 
-> But you don't need to create such a plugin, because production assets compression __is already in the core__ of **Cogear.JS**.
+> But you don't need to create such a plugin, because it [has already been created](https://github.com/codemotion/cogear-plugin-compressor).
 
 # Hooks
 Hooks are implemented from [`webpack/tapable`](https://github.com/webpack/tapable).
@@ -129,7 +129,8 @@ module.exports = class Cogear {
 			build: new SyncHook(),
 			clearBuild: new SyncHook(),
 			buildPage: new SyncHook(["file"]),
-			buildPagesJSON: new SyncHook(["pages"]),
+			beforeParse: new SyncHook(["parser","file"]),
+			afterParse: new SyncHook(["parser","file","result"]),
 			loadPagesForWebpack: new SyncHook(),
 			webpackProd: new SyncHook(["startServer"]),
 			webpackDev: new SyncHook(),
@@ -166,6 +167,8 @@ module.exports = class Cogear {
 	...
 }
 ```
+
+Check actual [`./lib/cogear.js`](https://github.com/codemotion/cogear.js/blob/master/lib/cogear.js) at Github.
 
 As you've mentioned, **Cogear.JS** core is built with hooks and plugins.
 
