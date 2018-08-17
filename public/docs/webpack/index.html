@@ -1,0 +1,24 @@
+<!DOCTYPE html><head><title>Webpack | Documentation | Cogear.JS - modern static sites generator</title><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="shortcut icon" href="/favicon.png" type="image/png"><meta name="description" content="Cogear.JS webpack info."><meta name="keywords" content="cogear,webpack,node,javascript,markdown,generator,website,hot-reload,themes,plugins,github"><meta property="og:title" content="Webpack"><meta property="og:type" content="website"><meta property="og:url" content="https://cogearjs.org/"><meta property="og:description" content="Cogear.JS webpack info."><meta property="og:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Webpack"><meta name="twitter:creator" content="@cogearjs"><meta name="twitter:description" content="Cogear.JS webpack info."><meta name="twitter:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true"><meta name="theme-color" content="#662D8C"><link href="../../css/js/docs.js.37461.css?374615d6e011e594e1e6" rel="stylesheet"><script type="text/javascript" src="../../js/docs.js.37461.js?374615d6e011e594e1e6"></script></head><body><nav class="navbar" role="navigation" aria-label="main navigation"><div class="container"><div class="navbar-brand"> <div class="navbar-item"><a href="/">COGEAR.JS</a></div><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu animated faster" id="menu"><div class="navbar-start"><div class="navbar-item"><a href="/docs">Docs</a></div></div><div class="navbar-end"><a class="navbar-item" href="/blog">Blog</a><a class="navbar-item" href="/videos">Videos</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js">Github</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js/issues">Issues</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js/wiki">Wiki</a><a class="navbar-item" href="/docs/license">License</a></div></div></div></nav><main><div class="container"><aside class="menu"><div class="menu-wrapper"><p class="menu-label" id="version">v1.0.0</p><ul class="menu-list"><li><a href="/docs">Getting started</a></li><li><a href="/docs/workflow">Workflow</a></li><li><a href="/docs/themes">Themes</a></li><li><a href="/docs/plugins">Plugins</a></li><li><a class="is-active" href="/docs/webpack">Webpack</a></li><li><a href="/docs/deploy">Deploy</a></li><li><a href="/docs/license">License</a></li><li><a href="/docs/support">Support</a></li></ul></div></aside><section class="markdown-body"><h1 id="basics">Basics</h1>
+<p><a href="https://webpack.js.org">Webpack</a> is the most advanced build tool for compiling assets. </p>
+<p>In fact it&#39;s a new worldwide standart for building websites.</p>
+<p>Moreover it providers realtime <strong>hot reloading</strong> to implement all the changes throughout all the scripts, styles, images and fonts assets immedeately. </p>
+<h1 id="configs">Configs</h1>
+<p>Config files both for <code>production</code> and <code>development</code> modes are located into the main <code>cogear</code> package root:</p>
+<pre><code class="language-bash">./cogear
+├── LICENCE.md
+├── README.md
+├── bin
+├── lib
+├── node_modules
+├── package.json
+├── postcss.config.js
+├── webpack.common.js  # &lt;= Common config shared between production and development
+├── webpack.dev.js     # &lt;= Development config
+└── webpack.prod.js    # &lt;= Production config</code></pre>
+<p>All in all it&#39;s usual <a href="https://webpack.js.org">Webpack</a> config. You can edit it in your project to customize <a href="https://webpack.js.org">Webpack</a> behavior. </p>
+<p>If you have some questions, please, take a closer look <a href="https://webpack.js.org/concepts/">to the concepts</a> in <a href="https://webpack.js.org">Webpack</a> documentation.</p>
+<h1 id="hooking-configs">Hooking configs</h1>
+<p>As you&#39;ve noticed config files returns a function which accepts system instasnce as <code>cogear</code> argument.</p>
+<p>This means that configs are called from inside the system build process.</p>
+<p>You may use <code>webpackProd</code> of <code>webpackDev</code> hook in your <a href="/docs/plugins">plugin</a> to change the webpacks config.</p>
+</section></div></main><footer><p id="copyleft">Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018</p></footer></body>

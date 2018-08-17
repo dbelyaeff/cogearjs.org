@@ -1,0 +1,347 @@
+<!DOCTYPE html><head><title>Workflow | Documentation | Cogear.JS - modern static sites generator</title><meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link rel="shortcut icon" href="/favicon.png" type="image/png"><meta name="description" content="Cogear.JS main workflow – how it works."><meta name="keywords" content="cogear,webpack,node,javascript,markdown,generator,website,hot-reload,themes,plugins,github"><meta property="og:title" content="Workflow"><meta property="og:type" content="website"><meta property="og:url" content="https://cogearjs.org/"><meta property="og:description" content="Cogear.JS main workflow – how it works."><meta property="og:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Workflow"><meta name="twitter:creator" content="@cogearjs"><meta name="twitter:description" content="Cogear.JS main workflow – how it works."><meta name="twitter:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true"><meta name="theme-color" content="#662D8C"><link href="../../css/js/docs.js.37461.css?374615d6e011e594e1e6" rel="stylesheet"><script type="text/javascript" src="../../js/docs.js.37461.js?374615d6e011e594e1e6"></script></head><body><nav class="navbar" role="navigation" aria-label="main navigation"><div class="container"><div class="navbar-brand"> <div class="navbar-item"><a href="/">COGEAR.JS</a></div><a class="navbar-burger" role="button" aria-label="menu" aria-expanded="false" data-target="menu"><span aria-hidden="true"></span><span aria-hidden="true"></span><span aria-hidden="true"></span></a></div><div class="navbar-menu animated faster" id="menu"><div class="navbar-start"><div class="navbar-item"><a href="/docs">Docs</a></div></div><div class="navbar-end"><a class="navbar-item" href="/blog">Blog</a><a class="navbar-item" href="/videos">Videos</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js">Github</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js/issues">Issues</a><a class="navbar-item" href="https://github.com/codemotion/cogear.js/wiki">Wiki</a><a class="navbar-item" href="/docs/license">License</a></div></div></div></nav><main><div class="container"><aside class="menu"><div class="menu-wrapper"><p class="menu-label" id="version">v1.0.0</p><ul class="menu-list"><li><a href="/docs">Getting started</a></li><li><a class="is-active" href="/docs/workflow">Workflow</a></li><li><a href="/docs/themes">Themes</a></li><li><a href="/docs/plugins">Plugins</a></li><li><a href="/docs/webpack">Webpack</a></li><li><a href="/docs/deploy">Deploy</a></li><li><a href="/docs/license">License</a></li><li><a href="/docs/support">Support</a></li></ul></div></aside><section class="markdown-body"><h1 id="basics">Basics</h1>
+<p><strong>Cogear.JS</strong> is a static websites generator. It means that it compiles <code>source</code> folder data to static html and assets files to the <code>output</code> folder.</p>
+<p>Pages in <code>source</code> folder can be provided in different formats: <code>.md</code>,<code>.pug</code>,<code>.html</code>,<code>.ejs</code>,<code>.hbs</code>.</p>
+<p>Compiled pages can have <code>layouts</code> which are provided by site <code>theme</code>.</p>
+<p>Main script <code>app.js</code> is bundled with every page, but additional per page scripts can be defined in page meta (with <a href="https://github.com/spatie/yaml-front-matter"><code>yaml-front-matter</code></a>).</p>
+<p>All external (remote) and internal(local or from <code>node_modules</code>) modules should be imported from scripts.</p>
+<h1 id="process">Process</h1>
+<p>To build a static website <strong>Cogear.JS</strong> do next:</p>
+<ol>
+<li>Reads site config from <code>./config.yaml</code> (<code>.js</code>,<code>.json</code> formats are also available).</li>
+<li>Searches <code>source</code> directory <code>pages</code> subfolder for pages. (default: <code>./src/pages</code>)</li>
+<li>Reads pages. 
+Available page formats: <code>.md</code>,<code>.pug</code>,<code>.html</code>,<code>.ejs</code>,<code>.hbs</code>.
+Parse metadata with <a href="https://github.com/spatie/yaml-front-matter"><code>yaml-front-matter</code></a>.</li>
+<li>Compiles static <code>html</code> files from pages content through the <code>theme</code> layout into <code>build</code> folder.</li>
+<li>Fires up <code>webpack</code> server (in <code>production</code> mode) or <code>webpack-dev-server</code> (in <code>dev</code> mode, with <em>hot-reload</em>).</li>
+<li>Compiles assets and injects them into previousely built static html files.
+Assets are: <code>js</code>,<code>coffee</code>,<code>css</code>,<code>sass</code>,<code>scss</code>,<code>stylus</code>,<code>less</code>,<code>Vue</code>,<code>jsx</code>,<code>fonts</code>,<code>images</code>.</li>
+<li>Done.</li>
+</ol>
+<h2 id="config">Config</h2>
+<p>Config is a simple JSON-file located at <code>./config.yaml</code>.</p>
+<pre><code class="language-yaml">site:
+  title: Cogear.JS – modern static websites generator
+theme: default</code></pre>
+<p>If <code>page</code> title is not defined then site config title will be used.</p>
+<p>Pay attention to the <code>theme</code> property as it defines basic layout and can be also used to load scripts, styles and other assets.</p>
+<article class="message is-warning">
+  <div class="message-body">
+    Config data is available in runtime via <code>cogear.config</code> object. Usefull for <a href="/docs/plugins">plugins</a>.
+   </div>
+</article>
+
+
+<h1 id="modes">Modes</h1>
+<p>When <strong>Cogear.JS</strong> is called from command line it runs in <code>development</code> mode.</p>
+<h2 id="development-mode">Development mode</h2>
+<pre><code class="language-bash">&gt; cogear # runs in devemopment mode by default</code></pre>
+<p>This mode peforms:</p>
+<ol>
+<li>Build pages and watch for changes.</li>
+<li>Start <a href="https://github.com/webpack/webpack-dev-server"><code>webpack-dev-server</code></a> which will instantly update in-browser pages, scripts and styles on the fly with <code>hot-reload</code> module.</li>
+</ol>
+<p><img src="/images/dev-fc5360.svg" alt="production"></p>
+<p>It handles all assets in memory (no output in real file system, don&#39;t panic). </p>
+<h2 id="production-mode">Production mode</h2>
+<pre><code class="language-bash">&gt; cogear production # runs in production mode</code></pre>
+<p>This mode performs:</p>
+<ol>
+<li>Build pages.</li>
+<li>Assets compilation and injection to pages with <a href="https://webpack.js.org">Webpack</a>.</li>
+<li>Starting local server to check out the results.</li>
+</ol>
+<p><img src="/images/production-fea98f.svg" alt="production"></p>
+<h2 id="build-mode">Build mode</h2>
+<pre><code class="language-bash">&gt; cogear build</code></pre>
+<p>Only build pages and perform Webpack assets compilation.</p>
+<p><img src="/images/build-695ff4.svg" alt="production"></p>
+<blockquote>
+<p>It should be called <strong>before</strong> <a href="/docs/deploy">deploy</a> process in order output files to be built.</p>
+</blockquote>
+<h2 id="deploy-mode">Deploy mode</h2>
+<pre><code class="language-bash">&gt; cogear deploy [preset]</code></pre>
+<p>Fires deploy process. </p>
+<p><img src="/images/deploy-269a2e.svg" alt="deploy"></p>
+<p>More info at <a href="/docs/deploy">Deploy</a> page.</p>
+<h1 id="source">Source</h1>
+<p>It&#39;s the place where all magic happens.</p>
+<p>Basic structure:</p>
+<pre><code class="language-bash">./src
+├── app.js         # required, entry point
+├── layouts        # optional
+│   └── index.pug  # optional
+└── pages          # required, site index page
+    └── index.md   # required, entry point</code></pre>
+<p>Required files are: <code>app.js</code> and <code>pages/index.md</code> (<code>Markdown</code> or <a href="#pages">any other format</a>).</p>
+<p>Basically it&#39;s all you need to build your first site.</p>
+<h2 id="main-script-app-js">Main script <code>app.js</code></h2>
+<p>It&#39;s the <code>entry</code> point (<a href="https://webpack.js.org/concepts/entry-points/"><code>Webpack</code> term</a>) which has to be injected in all the pages.</p>
+<p>All you internal and external scripts may be imported there.</p>
+<p>Example:</p>
+<pre><code class="language-javascript">// Look at webpack-specific comments
+import(&#39;https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css&#39;)
+// Either remote or local scripts, styles and other resources (like fonts) can be loaded
+import(&#39;./css/app.styl&#39;)
+// You can even import your theme entry script if it&#39;s necessary
+import(&#39;@/js/script.js&#39;)
+// `@` is an alias for current theme folder
+// `#` is an alias for project root folder</code></pre>
+<h1 id="pages">Pages</h1>
+<p>Pages are the main structure units of <strong>Cogear.JS</strong>.</p>
+<p>They must be located in <code>pages</code> subfolder of the <code>source</code> directory (default: <code>./src/pages</code>).</p>
+<h2 id="formats-parsers-">Formats (parsers)</h2>
+<p>They can be in various formats: <code>.md</code>,<code>.pug</code>,<code>.html</code>,<code>.ejs</code>,<code>.hbs</code>.</p>
+<p>Different pages can have their own file extension at the same time (but avoid the same filenames).</p>
+<pre><code class="language-bash">./src/pages
+├── about.html       # Compiles with EJS (can use variables)
+├── contact-us.pug   # Compiles with PUG
+├── index.md         # Compiles with Markdown
+├── portfolio.ejs    # Compiles with EJS
+└── testimonals.hbs  # Compiles with Handlebars    </code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">Page extension</th>
+<th align="center">Compiler</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>.md</code></td>
+<td align="center">Markdown</td>
+</tr>
+<tr>
+<td align="center"><code>.pug</code></td>
+<td align="center">PUG</td>
+</tr>
+<tr>
+<td align="center"><code>.html</code></td>
+<td align="center">EJS</td>
+</tr>
+<tr>
+<td align="center"><code>.ejs</code></td>
+<td align="center">EJS</td>
+</tr>
+<tr>
+<td align="center"><code>.hbs</code></td>
+<td align="center">Handlebars</td>
+</tr>
+</tbody></table>
+<h2 id="metadata-with-yaml-front-matter">Metadata with <a href="https://github.com/spatie/yaml-front-matter"><code>yaml-front-matter</code></a></h2>
+<p>Each page can store meta-data with the help of <a href="https://github.com/spatie/yaml-front-matter"><code>yaml-front-matter</code></a> script.</p>
+<p>Example:
+<code>./src/pages/about.md</code></p>
+<pre><code class="language-bash">---
+title: About   # Used for html head title param
+uri: about-us  # Used for generated file path
+layout: about  # User for layout
+---
+# About us
+
+You may contact us anytime using this phone number:
+
+## 8-800-000-00-00</code></pre>
+<article class="message is-warning">
+  <div class="message-body">
+    No matter what page format do you use, <a href="https://github.com/spatie/yaml-front-matter"><code>yaml-front-matter</code></a> meta-data <b>should always be formatted in that same way</b>.
+   </div>
+</article>
+
+<p>Example:
+<code>./src/pages/about.html</code></p>
+<pre><code class="language-bash">---
+title: About   # Used for html head title tag
+description: Awesome contacts page # Used for html head meta description tag
+keywords: cogear.js, node, webpack # Used for html head meta keywords tag
+uri: about-us  # Used for generated file path
+layout: about  # User for layout
+---
+&lt;h1&gt;&lt;%= title%&gt;&lt;/h1&gt;
+
+You may contact us anytime using this phone number:
+
+&lt;h2&gt;8-800-000-00-00&lt;/h2&gt;</code></pre>
+<article class="message is-info">
+  <div class="message-body">All the metadata is provided as <b>JSON-object</b> to the page template and to the layout template.
+  <br>Pages content is provided via <code>content</code> variable provided for layouts.</div>
+</article>
+
+<p>Example: <code>./themes/default/layouts/index.pug</code></p>
+<pre><code class="language-pug">doctype html
+head
+  title= title
+  meta(name=&quot;description&quot; content=description)
+  meta(name=&quot;keywords&quot; content=keywords)
+    block head
+body
+    block content
+        != content // is needed to be unescaped
+    block footer</code></pre>
+<p>As page contents is a simple html <strong>don&#39;t forget to unescape it</strong> in page layout.</p>
+<h2 id="routing">Routing</h2>
+<p>If <code>uri</code> param is not provided, <strong>Cogear.JS</strong> builds page route corresponding to folders structure.</p>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th align="center">Source file</th>
+<th align="center">Generated file</th>
+<th align="center">Real usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">/index.md</td>
+<td align="center">/index.html</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">/contact-us.hbs</td>
+<td align="center">/contact-us/index.html</td>
+<td align="center">/contact-us/</td>
+</tr>
+<tr>
+<td align="center">/about/index.pug</td>
+<td align="center">/about/index.html</td>
+<td align="center">/about/</td>
+</tr>
+<tr>
+<td align="center">/portfolio/beautiful-site.ejs</td>
+<td align="center">/portfolio/beautiful-site/index.html</td>
+<td align="center">/portfolio/beautiful-site</td>
+</tr>
+</tbody></table>
+<p>In custom case when <code>uri</code> is provided system will follow it, adding <code>/index.html</code> at the end if is needed:</p>
+<table>
+<thead>
+<tr>
+<th align="center"><code>uri</code> param</th>
+<th align="center">Generated file</th>
+<th align="center">Real usage</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">index.html</td>
+<td align="center">/index.html</td>
+<td align="center">/</td>
+</tr>
+<tr>
+<td align="center">about</td>
+<td align="center">/about/index.html</td>
+<td align="center">/about</td>
+</tr>
+<tr>
+<td align="center">portfolio/awesome-site</td>
+<td align="center">/portfolio/awesome-site/index.html</td>
+<td align="center">/portfolio/awesome-site</td>
+</tr>
+</tbody></table>
+<p>In most cases you won&#39;t needed <code>uri</code> param at all.</p>
+<h2 id="per-page-scripts">Per page scripts</h2>
+<p>All the pages share <code>app.js</code> entry script. But what if we need some other script to be on some page?</p>
+<p>User <code>js</code> array variable to add scripts relative to site <code>source</code> directory (default: <code>./src</code>).</p>
+<article class="message is-warning">
+  <div class="message-body"><b>Attention!</b> Usage of <code>js</code> meta-variable will rewrite it's default value (<code>app.js</code>). Don't forget to include <code>app.js</code> if you need it.</div>
+</article>
+
+<p>Example: <code>./pages/about.md</code></p>
+<pre><code class="language-bash">---
+title: About
+js: [&quot;app.js&quot;,&quot;js/about.js&quot;]
+---
+# About page</code></pre>
+<p>Example: <code>./pages/js/about.js</code></p>
+<pre><code class="language-javascript">console.log(&quot;This message is shown only in \&quot;About\&quot; page console.&quot;)
+// Or you can import even remote scripts
+import(&#39;https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.js&#39;)
+import(&#39;https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css&#39;)
+// Or node_modules
+import Vue from &#39;vue&#39;
+// Or local scripts
+import Lib from &#39;./lib.js&#39;
+import &#39;./css/about.sass&#39;</code></pre>
+<h1 id="layouts">Layouts</h1>
+<p>After the <code>page</code> content is parsed with proper formatter, system starts up to look for the layout.</p>
+<p><code>Layout</code> can be a file of the same <a href="#formats-parsers-">formats</a> (with the exception of <code>.md</code>).</p>
+<p>If <code>layout</code> is not defined in <code>page</code> metadata, it will be set to <code>index</code> by default.</p>
+<p>Example:</p>
+<pre><code class="language-bash">---
+title: Index
+# no layout is provded here, so it&#39;ll be set to `index` by default
+---
+# Page contents</code></pre>
+<p>If <code>layout</code> is provided but has no extension, <code>.pug</code> will be used by default.</p>
+<p>Example:</p>
+<pre><code class="language-bash">---
+title: Index
+layout: index # .pug extension will be added by default
+---
+# Page contents</code></pre>
+<p>If <code>layout</code> param provides extension, appropriate formatter will be used.</p>
+<p>Example:</p>
+<pre><code class="language-bash">---
+title: Index
+layout: index.hbs # Handlebars compiler will be used
+---
+# Page contents</code></pre>
+<table>
+<thead>
+<tr>
+<th align="center">Layout extension</th>
+<th align="center">Compiler</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">none</td>
+<td align="center">PUG</td>
+</tr>
+<tr>
+<td align="center">.pug</td>
+<td align="center">PUG</td>
+</tr>
+<tr>
+<td align="center">.html</td>
+<td align="center">EJS</td>
+</tr>
+<tr>
+<td align="center">.ejs</td>
+<td align="center">EJS</td>
+</tr>
+<tr>
+<td align="center">.hbs</td>
+<td align="center">Handlebars</td>
+</tr>
+</tbody></table>
+<h2 id="layouts-resolver">Layouts resolver</h2>
+<p>Layouts can be located at current theme <code>layouts</code> folder (default: <code>./themes/default/layouts</code>) or at current site <code>layouts</code> folder (example: <code>./src/layouts</code>).</p>
+<pre><code class="language-bash">Search loop:
+1. Site layouts   # (ex.:`./src/layouts`)
+2. Theme layouts  # (ex.:`./themes/default/layouts`)</code></pre>
+<p>This way you can override theme layout with the current site layout.</p>
+<blockquote>
+<p>If site config <code>config.theme</code> is set to <code>false</code>, only site <code>layouts</code> folder will be used for search.</p>
+</blockquote>
+<blockquote>
+<p>If there is no site or theme layout, build process will be stopped.</p>
+</blockquote>
+<h2 id="page-content-in-layout">Page content in layout</h2>
+<p>As it was said earlier, page metadata and it&#39;s content (as <code>content</code> field of data object) are provided to layout as variables.</p>
+<p>Let&#39;s look and <code>html5</code> template (which also served with <code>EJS</code> compiler to make <em>variables</em> be used):</p>
+<pre><code>&lt;!doctype html&gt;
+&lt;head&gt;
+  &lt;title&gt;&lt;%= title%&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;%- output%&gt;
+&lt;/body&gt;</code></pre><p>Pay attention that <code>content</code> variable must be <strong>unescaped</strong> as it contains raw html data, parsed from page contents.</p>
+<h1 id="images">Images</h1>
+<p>Images in css assets (<code>.sass</code>,<code>.less</code>,<code>.styl</code>, etc) can use relative paths.</p>
+<pre><code class="language-styl">.bg
+  background: url(&#39;./images/bg.jpg&#39;)</code></pre>
+<p>Images paths in layouts and pages should be prefixed with <code>~</code> to be resolved correctly.</p>
+<pre><code class="language-markdown"># About
+
+![me](~images/me.jpg)</code></pre>
+<p>In this case prefixed image will be resolved from <code>./src/images/me.jpg</code>.</p>
+<p>Or even from <code>[current-theme-path]/images/me.jpg</code>.</p>
+<p>Images resolver works for themes as well.</p>
+</section></div></main><footer><p id="copyleft">Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018</p></footer></body>

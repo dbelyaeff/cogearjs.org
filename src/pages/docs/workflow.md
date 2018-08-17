@@ -105,13 +105,12 @@ It's the place where all magic happens.
 
 Basic structure:
 ```bash
-# Listing of ./src dir
 ./src
-|  layouts/     # optional
-|    index.pug  # optional
-|  pages/       # required
-|    index.md   # required, site index page
-|  app.js       # required, entry point
+├── app.js         # required, entry point
+├── layouts        # optional
+│   └── index.pug  # optional
+└── pages          # required, site index page
+    └── index.md   # required, entry point
 ```
 
 Required files are: `app.js` and `pages/index.md` (`Markdown` or [any other format](#pages)).
@@ -150,11 +149,11 @@ They can be in various formats: `.md`,`.pug`,`.html`,`.ejs`,`.hbs`.
 Different pages can have their own file extension at the same time (but avoid the same filenames).
 ```bash
 ./src/pages
-|  index.md            # Compiles with Markdown
-|  about.html          # Compiles with EJS (can use variables)
-|  contact-us.pug      # Compiles with PUG
-|  portfolio.ejs       # Compiles with EJS
-|  testimonals.hbs     # Compiles with Handlebars
+├── about.html       # Compiles with EJS (can use variables)
+├── contact-us.pug   # Compiles with PUG
+├── index.md         # Compiles with Markdown
+├── portfolio.ejs    # Compiles with EJS
+└── testimonals.hbs  # Compiles with Handlebars    
 ```
 
 Page extension|Compiler

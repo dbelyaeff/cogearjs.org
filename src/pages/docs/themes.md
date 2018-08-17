@@ -52,11 +52,15 @@ theme: cogear-theme-bulma # no difference
 
 Basic file structure is:
 ```bash
-./bulma
-|  layouts      # Layouts folder
-|  \index.pug   # Index layout | required
-|  package.json # Basic npm package.json
-|  README.md    # Do not forget to tell other users about your theme
+./themes/bulma
+├── README.md       # README
+├── favicon.png			# Favicon [optional]
+├── layouts         # Layouts folder
+│   └── index.pug   # Index layout
+├── package.json    # npm package.json
+├── screenshot.png  # theme screenshot [optional]
+├── style.styl      # theme style [optional]
+└── theme.js        # theme script [optional]
 ```
 
 Listing: `./layouts/index.pug`

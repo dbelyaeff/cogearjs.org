@@ -34,7 +34,7 @@ For example if you want to install [`pages-json`](https://www.npmjs.com/package/
 > yarn add cogear-plugin-pages-json
 ```
 
-You don't need to enable it manually becase the systems core will do it for you.
+You don't need to enable it manually becase the system core will do it for you.
 
 ## Config
 
@@ -58,8 +58,8 @@ You can use globally-installed plugins (__npm packages__) with this method.
 You can create `./plugins` folder in the root of you project and then download, generate or git clone `plugins` there.
 ```bash
 ./plugins
-|- awesome # plugin in development
-|- cogear-plugin-awesome # the same, but ready for npm
+├── awesome                # plugin in development
+└── cogear-plugin-awesome  # the same, but ready for npm
 ```
 > Locally stored plugins have a higher priority over the `npm packages`.
 
@@ -69,13 +69,14 @@ You can create `./plugins` folder in the root of you project and then download, 
 
 It can be bundled with `Webpack` also as any other node module.
 
-Let's start to develop `compress` plugin and define it's file structure.
+Let's start to develop `compressor` plugin and define it's file structure.
 
-Listing: `cogear-plugin-compress`
+Listing: `cogear-plugin-compressor`
 ```bash
-./cogear-plugin-compress
-|- package.json # npm package info file
-|- compress.js  # main scripts file
+./cogear-plugin-compressor
+├── README.md     # README
+├── package.json  # npm package info file
+└── plugin.js     # main scripts file
 ```
 
 Listing: `cogear-plugin-compress/package.json`
@@ -114,7 +115,7 @@ Hooks are implemented from [`webpack/tapable`](https://github.com/webpack/tapabl
 
 If you are familiar with webpack plugins, there will be nothin new for you.
 
-List of all hooks available in the systems core `./lib/cogear.js`:
+List of all hooks available in the system core `./lib/cogear.js`:
 ```javascript
 module.exports = class Cogear {
 	constructor() {

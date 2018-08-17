@@ -45,7 +45,6 @@ body
 			text-decoration underline
 			color #FFF !important
 	&.active
-		background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
 	&.scroll-active
 		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
 		background-size: 400% 400%;
@@ -61,6 +60,8 @@ body
 			border-top 1px solid rgba(255,255,255,.6)
 			color #FFF
 			text-align center
+	&.active
+		background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
 #s1
 	width 100vw
 	height 100vh
@@ -257,3 +258,5 @@ body
 		transition: transform .3s ease-out .5s, box-shadow .3s ease-in-out .5s !important
 		height 50px
 		border 3px solid #FFF
+#version
+	margin-right 10px

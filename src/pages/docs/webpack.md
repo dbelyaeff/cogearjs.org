@@ -17,22 +17,18 @@ Moreover it providers realtime **hot reloading** to implement all the changes th
 
 Config files both for `production` and `development` modes are located into the main `cogear` package root:
 ```bash
-./
-|  webpack.prod.js   # <= Production config
-|  webpack.dev.js    # <= Development config
-|  webpack.common.js # <= Common config shared between production and development
+./cogear
+├── LICENCE.md
+├── README.md
+├── bin
+├── lib
+├── node_modules
+├── package.json
+├── postcss.config.js
+├── webpack.common.js  # <= Common config shared between production and development
+├── webpack.dev.js     # <= Development config
+└── webpack.prod.js    # <= Production config
 ```
-
-Let's take a closer look at them.
-
-## `webpack.common.js`
-<script src="https://gist.github.com/codemotion/1296ca28650c6eb8a9854d6a3c6190fc.js"></script>
-
-## `webpack.dev.js`
-<script src="https://gist.github.com/codemotion/2b9a5cc2a896ff99d8b1cce56ff91e30.js"></script>
-
-## `webpack.prod.js`
-<script src="https://gist.github.com/codemotion/1e8e57fadbeb3bcce1d016837997a73b.js"></script>
 
 All in all it's usual [Webpack](https://webpack.js.org) config. You can edit it in your project to customize [Webpack](https://webpack.js.org) behavior. 
 

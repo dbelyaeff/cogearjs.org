@@ -34,7 +34,7 @@ Using [Github Pages](https://pages.github.com) (or any similar project) you can 
 
 Any site that has its administrator generated content.
 
-Using [Firebase](https://firebase.google.com) or any other _backend_, written in _any lang_ (**PHP**, **Ruby**, **Python**, **Node.JS**) or even with CMS like a **WordPress**, with the help of modern frontend technologies like [Vue.JS](https://vuejs.org) or [React](https://reactjs.org), it can be turned into more dynamic site like **e-commerce**, **products catalog** and so on.
+Using [Firebase](https://firebase.google.com) or any other _backend_, written in _any lang_ (**PHP**, **Ruby**, **Python**, **Node.JS**) or even with CMS like a **WordPress**, with help of modern frontend technologies like [Vue.JS](https://vuejs.org) or [React](https://reactjs.org), it can be turned into more dynamic site like **e-commerce**, **products catalog** and so on.
 
 ### What it cannot be used for:
 * Forum,
@@ -84,7 +84,7 @@ And start up **Cogear.JS** in prefered mode.
 > cogear deploy # deploy site to the default server
 ```
 # Options
-All available options can be seen via `--help` (or it's shortcut `-h`) command.
+All available options can be seen via `--git` (or shortcut `-h`) command.
 ```bash
 > cogear -h
 
