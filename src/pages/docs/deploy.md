@@ -74,6 +74,7 @@ Start deploying with:
 ```bash
 > cogear deploy [preset-name]
 ```
+> If output folder is empty, build will be done automatically before deploy.
 
 If no preset is called, **the first one** will be fired (the highest one in `yaml` config).
 

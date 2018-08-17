@@ -13,7 +13,7 @@ import Anchors from './lib/anchors'
 import SmoothScroll from 'smooth-scroll'
 import './lib/burger.js'
 import './lib/version.js'
-window.addEventListener('load',()=>{
+document.addEventListener('DOMContentLoaded',()=>{
 	hljs.initHighlightingOnLoad()
 	document.querySelectorAll("pre code").forEach(block=>{
 		hljs.highlightBlock(block)
