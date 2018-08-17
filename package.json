@@ -12,6 +12,7 @@
     "babel-preset-es2015": "^6.24.1",
     "bulma": "^0.7.1",
     "cogear-plugin-compressor": "1.0.1",
+    "fitvids": "^2.0.0",
     "github-markdown-css": "^2.10.0",
     "highlight.js": "^9.12.0",
     "lodash": "^4.17.10",

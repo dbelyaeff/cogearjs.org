@@ -2,7 +2,7 @@
 title: Getting Started
 description: Getting Started guide for Cogear.JS
 layout: docs
-js: ['js/docs.js','js/help.js']
+js: ['js/docs.js']
 ---
 # About
 **Cogear.JS** is a static websites generator built with [Node.JS](https://nodejs.org) and based on [Webpack](https://webpack.js.org) (v4.6).

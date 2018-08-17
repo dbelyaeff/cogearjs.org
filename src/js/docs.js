@@ -15,7 +15,9 @@ import Anchors from './lib/anchors'
 import SmoothScroll from 'smooth-scroll'
 import './lib/burger.js'
 import './lib/version.js'
+import fitVids from 'fitvids'
 document.addEventListener('DOMContentLoaded',()=>{
+	fitVids()
 	hljs.initHighlightingOnLoad()
 	document.querySelectorAll("pre code").forEach(block=>{
 		hljs.highlightBlock(block)
