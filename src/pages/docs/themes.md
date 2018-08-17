@@ -54,7 +54,7 @@ Basic file structure is:
 ```bash
 ./themes/bulma
 ├── README.md       # README
-├── favicon.png			# Favicon [optional]
+├── favicon.png     # Favicon [optional]
 ├── layouts         # Layouts folder
 │   └── index.pug   # Index layout
 ├── package.json    # npm package.json

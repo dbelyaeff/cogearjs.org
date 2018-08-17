@@ -43,6 +43,21 @@ Using [Firebase](https://firebase.google.com) or any other _backend_, written in
 
 Or any other site type with great amount of user-generated content which relies on heavily database usage and dynamically generated pages.
 
+# Requirements
+
+You have [Node.JS](https://nodejs.org) (9.x or higher) and [NPM](https://www.npmjs.com) (usually comes together) to be installed.
+
+[Download and install](https://nodejs.org/en/download/)
+
+The latest version (v10.9.0) is recommended.
+
+**Cogear.JS** runs on:
+* Mac
+* Linux
+* Windows
+
+You may also want to use awesome [VSCode](https://code.visualstudio.com) editor.
+
 # Installation
 To install **Cogear.JS** do next:
 ```bash
