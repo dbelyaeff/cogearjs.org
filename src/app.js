@@ -1,3 +1,5 @@
+import './fonts/google-fonts-1534515193737.css'
+import './fonts/google-fonts-1534515231222.css'
 import './css/bulma.sass'
 import './css/app.styl'
 import 'animate.css'
