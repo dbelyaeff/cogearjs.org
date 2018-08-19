@@ -6,6 +6,7 @@
   "author": "Dmitriy Beliaev <admin@cogear.ru> (https://cogear.org)",
   "license": "MIT",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.2.0",
     "animate.css": "^3.7.0",
     "aos": "^2.3.3",
     "babel-plugin-transform-object-assign": "^6.22.0",
@@ -19,6 +20,7 @@
     "smoothscroll-polyfill": "^0.4.3",
     "throttle-debounce": "^2.0.1",
     "turbolinks": "^5.1.1",
+    "turbolinks-animate": "^3.0.5",
     "typed.js": "^2.0.9",
     "vue": "^2.5.17"
   },

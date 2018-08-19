@@ -1,7 +1,22 @@
 @import './_vars.styl'
-nav.navbar
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.navigation
 	background: linear-gradient(to right,$purple,$light_purple)
+	nav.navbar
+		display flex
+		background transparent !important
+		@media(max-width: $breakpoints.desktop)
+			flex-direction column
 	.navbar-brand
+		margin 0 !important
+		@media(max-width: $breakpoints.desktop)
+			display flex
+			flex 1
+			flex-direction row
+			justify-content space-between
 		.navbar-item
 			color: #FFF !important
 		font-weight: bold
@@ -15,15 +30,13 @@ nav.navbar
 .is-desktop
 	@media(max-width $breakpoints.desktop)
 		display none
-.menu-wrapper
-	position: sticky !important
-	top 10px
-	overflow auto
-	max-height 100vh
-main
-	.container
+body
+	@media(max-width $breakpoints.tablet)
+		font-size 85%
+body > .container
+	main
 		display: flex
-		align-items: top
+		align-items: flex-start
 		flex-direction: row
 		justify-content: center
 		@media(max-width $breakpoints.tablet)
@@ -40,13 +53,18 @@ main
 			// > section
 			// 	max-width 75vw !important
 		> aside
-			padding-top: 10px
-			padding-left: 0px
+			padding: 10px 0 20px;
 			border-right: 1px solid rgba(0,0,0,.1)
-			min-width: 200px
-			margin-right: 20px
+			@media(min-width $breakpoints.tablet)
+				min-width: 200px
+				overflow auto
+				max-height 100vh
+			@media(min-width: $breakpoints.tablet)
+				position: sticky !important
+				top 10px
 			@media(max-width: $breakpoints.tablet)
 				margin-right 0 !important
+				width 100%
 			.menu-label
 				padding-left: 10px
 			> ul
@@ -63,11 +81,12 @@ main
 								background: rgba(0,0,0,.1) !important
 								color: black !important
 		> section
+			font-size 1rem
 			margin-top: 0px
 			flex: 1
 			min-height: 100vh
+			padding: 15px 20px 20px 20px
 			max-width 768px
-			padding: 15px 20px 20px 0
 			border-right 1px solid rgba(0,0,0,.1)
 			@media(min-width: $breakpoints.tablet+10)
 				width: 80vw
@@ -77,6 +96,7 @@ main
 				max-width 100%
 				height auto
 			@media(max-width: $breakpoints.tablet)
+				max-width 100%
 				padding 5px 20px 20px
 			ul
 				li
@@ -89,6 +109,7 @@ main
 			text-decoration none !important
 			.step
 				text-decoration underline
+
 @media(max-width: $breakpoints.tablet)
 	h1
 		font-size: 1.4em !important
@@ -98,26 +119,34 @@ main
 		font-size: 1.2em !important
 	h4
 		font-size: 1.1em !important
+h1
+	position: sticky !important
+	top 0px
+	padding 5px 0
+	background #FFF
 h1,h2,h3,h4,h5
-	&:hover
+	a:hover
 		> a.link
 			opacity 1
-			transform translate(0,0)
-	> a.link
-		opacity 0
-		transform translate(10px,0)
-		display inline-block
-		transition opacity .4s ease-in, transform .3s ease-out
-		color rgba(0,0,0,.1) !important
-		margin-left 5px
-		font-family: 'Montserrat', sans-serif
-		font-size 0.8em
-		vertical-align middle
+	a 
+		color black !important
+		text-decoration none !important
+		user-select none
+		i
+			opacity 0
+			display inline-block
+			transition opacity .4s ease-in, transform .3s ease-out
+			color rgba(0,0,0,.1) !important
+			margin-left 5px
+			font-family: 'Montserrat', sans-serif
+			font-size 0.8em
+			vertical-align middle
+			transform translate(20px,0)
 		&:hover
-			color rgba(0,0,0,.3) !important
-			svg
-				transform rotate(45deg) 
-		svg
-			transition transform .2s ease-in
+			i
+				// transition transform .2s ease-in
+				opacity 1
+				color rgba(0,0,0,.3) !important
+				transform translate(0,0) rotate(45deg) 
 .fluid-width-video-wrapper
 	margin 15px 0 20px !important

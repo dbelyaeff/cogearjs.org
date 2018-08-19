@@ -4,7 +4,6 @@ let burger = () => {
 
   // Check if there are any navbar burgers
   if ($navbarBurgers.length > 0) {
-    console.log('here')
     // Add a click event on each of them
     $navbarBurgers.forEach( el => {
       el.addEventListener('click', () => {

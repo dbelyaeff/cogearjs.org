@@ -7,9 +7,13 @@ export default class Anchors
 		new Promise (resolve,reject) =>
 			@items = document.querySelectorAll(@options.selector)
 			@items.forEach (h)=>
-				anchor = document.createElement 'a'
-				anchor.innerHTML = '<i class="fas fa-link"></i>'
-				anchor.href = '#' + h.id
-				anchor.classList.add 'link'
-				h.appendChild(anchor)
+				title =  document.createElement 'a'
+				title.innerText = h.innerText
+				title.href = '#' + h.id
+				anchor = document.createElement 'i'
+				anchor.classList.add('fas')
+				anchor.classList.add('fa-link')
+				title.appendChild(anchor)
+				h.innerHTML = ''
+				h.appendChild(title)
 			resolve()

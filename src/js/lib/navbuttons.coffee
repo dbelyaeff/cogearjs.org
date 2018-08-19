@@ -28,7 +28,8 @@ export default class Navbuttons
 			prevLink.classList.add('button')
 			prevLink.classList.add('is-link')
 			prevLink.href = prev.href
-			prevLink.innerHTML = "<span class=\"icon is-small\">&larr;</span><span class=\"step\">#{prev.innerText}</span>"
+			prevLink.dataset.turbolinksAnimateAnimation='fadeInRight'
+			prevLink.innerHTML = "<span class=\"icon is-small\"><i class=\"fas fa-arrow-left\"></i></span><span class=\"step\">#{prev.innerText}</span>"
 		else
 			prevLink = document.createElement 'span'
 		if next
@@ -36,7 +37,8 @@ export default class Navbuttons
 			nextLink.classList.add('button')
 			nextLink.classList.add('is-link')
 			nextLink.href = next.href
-			nextLink.innerHTML = "<span class=\"step\">#{next.innerText}</span><span class=\"icon is-small\">&rarr;</span>"
+			nextLink.dataset.turbolinksAnimateAnimation='fadeInLeft'
+			nextLink.innerHTML = "<span class=\"step\">#{next.innerText}</span><span class=\"icon is-small\"><i class=\"fas fa-arrow-right\"></i></span>"
 		else
 			nextLink = document.createElement 'span'
 		el.appendChild(prevLink)
