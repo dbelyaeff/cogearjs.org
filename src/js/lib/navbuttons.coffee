@@ -6,6 +6,7 @@ export default class Navbuttons
 		@options = if options then Object.assign(defaults,options) else defaults
 		@build()
 	build: ->
+		return if document.getElementById('pagesNav')
 		links = document.querySelectorAll(@options.selector + " ul > li > a")
 		index = findIndex(links,(link) -> link.classList.contains("is-active"))
 		if index > 0
@@ -20,6 +21,7 @@ export default class Navbuttons
 			prev = null
 		
 		el = document.createElement 'nav'
+		el.id = "pagesNav"
 		el.classList.add('prevnext')
 		if prev
 			prevLink = document.createElement 'a'
@@ -42,6 +44,8 @@ export default class Navbuttons
 		document.querySelector(".markdown-body").appendChild(el)
 		document.addEventListener "keydown", (e) =>
 			if e.key == 'ArrowRight' && next
-				window.location.href = next.href
+				# window.location.href = next.href
+				window.Turbolinks.visit(next.href)
 			if e.key == 'ArrowLeft' && prev
-				window.location.href = prev.href
+				# window.location.href = prev.href
+				window.Turbolinks.visit(prev.href)

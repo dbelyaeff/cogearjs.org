@@ -9,6 +9,9 @@ export default class AutoSubmenu {
 	}
 	build(){
 		let activeLink = document.querySelector(this.options.activeLinkSelector)
+		if(activeLink.parentElement.querySelector('ul')){
+			return
+		}
 		let headers = document.querySelectorAll(this.options.headersSelector)
 		let ul = document.createElement("ul")
 		ul.classList.add('animated')

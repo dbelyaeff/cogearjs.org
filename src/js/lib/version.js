@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded',()=>{
+let version = ()=>{
 	let version = sessionStorage.getItem('version')
 	if(null === version){
 		fetch('https://raw.githubusercontent.com/codemotion/cogear.js/master/package.json')
@@ -15,4 +15,6 @@ document.addEventListener('DOMContentLoaded',()=>{
 	if(version){
 		document.getElementById('version').innerText = 'v' + version
 	}
-})
+}
+document.addEventListener('DOMContentLoaded',version)
+document.addEventListener('turbolinks:load',version)

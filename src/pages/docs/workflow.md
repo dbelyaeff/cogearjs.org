@@ -276,6 +276,18 @@ import Lib from './lib.js'
 import './css/about.sass'
 ```
 
+## Change, add or delete pages
+
+If page content changes, browser will reload it's window automatically.
+
+You can have instant reload content using [Vue.JS](https://vuejs.org), [React](https://reactjs.org), [Angular](https://angular.io), [Ember](https://emberjs.org) (where data is stored in Javascript).
+
+> **Important**
+>
+> If you add or delete a page, **Cogear.JS** is needed to be reload.
+>
+> I'm stucked with it now. Because `webpack-dev-middleware` can't reload it's config on fly.
+
 # Layouts
 After the `page` content is parsed with proper formatter, system starts up to look for the layout.
 

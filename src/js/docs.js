@@ -16,7 +16,8 @@ import SmoothScroll from 'smooth-scroll'
 import './lib/burger.js'
 import './lib/version.js'
 import fitVids from 'fitvids'
-document.addEventListener('DOMContentLoaded',()=>{
+import Turbolinks from 'turbolinks'
+let init = ()=>{
 	fitVids()
 	hljs.initHighlightingOnLoad()
 	document.querySelectorAll("pre code").forEach(block=>{
@@ -34,5 +35,10 @@ document.addEventListener('DOMContentLoaded',()=>{
 		offset: 100,
 		throttle: 50
 	})
-})
+}
+
+// document.addEventListener('DOMContentLoaded',init)
+document.addEventListener('turbolinks:load',init)
+window.Turbolinks = Turbolinks
+window.Turbolinks.start()
 
