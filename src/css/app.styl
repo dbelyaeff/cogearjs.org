@@ -26,7 +26,8 @@ body
 	a
 		color #FFF !important
 	.navbar-menu.is-active
-		background: linear-gradient(45deg,alpha(#522262,.7),alpha($purple,.7),alpha($light_purple,.7)) !important
+		// background: linear-gradient(45deg,alpha(#522262,.7),alpha($purple,.7),alpha($light_purple,.7)) !important
+		// background: linear-gradient(to right,$purple,rgba(148,0,171,0.))
 		box-shadow 0px 3px 5px rgba(0,0,0,.4)
 		z-index 100
 	.navbar-brand 
@@ -46,10 +47,11 @@ body
 			color #FFF !important
 	&.active
 	&.scroll-active
-		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
-		background-size: 400% 400%;
-		animation: bg 5s ease infinite;
-		transition background 2s ease-out 1s
+		// background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		background: linear-gradient(to right,$purple,rgba(148,0,171,0.7)) !important
+		// background-size: 400% 400%;
+		// animation: bg 5s ease infinite;
+		// transition background 2s ease-out 1s
 		.navbar-brand
 		 	// background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
 			a.logo
@@ -61,7 +63,8 @@ body
 			color #FFF
 			text-align center
 	&.active
-		background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
+		background: linear-gradient(to right,$purple,rgba(148,0,171,0.7))
+		// background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
 #s1
 	width 100vw
 	height 100vh
@@ -259,4 +262,5 @@ body
 		height 50px
 		border 3px solid #FFF
 #version
-	margin-right 20px
+	@media(min-width $breakpoints.desktop)
+		margin-right 20px

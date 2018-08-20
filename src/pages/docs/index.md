@@ -111,15 +111,6 @@ All available options can be seen via `--help` (or shortcut `-h`) command.
 ```bash
 > cogear -h
 
-╓─────────────────────────────────────────────────────────────╖
-║                                                             ║
-║                                                             ║
-║        Cogear.JS – modern static websites generator.        ║
-║                                                             ║
-║                    https://cogearjs.org                     ║
-║                                                             ║
-╙─────────────────────────────────────────────────────────────╜
-
 Usage: cogear [command]
 
 Runs in development mode by default (without [command]).
@@ -132,15 +123,15 @@ Options:
   -h, --host          set host for local server, default: localhost
   -p, --port          set port for local server, default: 9000
   -o, --open          if set to false, browser will not be opened after build, default: false
-  -w, --verbose       set webpack verbose mode, default: false
   -v, --version       print current version
+  -w, --verbose       set webpack verbose mode, default: true
 
 Commands:
 
   command   (alias)     [optional]      description
 
-  [dev]        (d)                     run dev server # hot-reload for pages, scripts, styles [DEFAULT]
-  production   (p)                     run build and starts static server
+  [dev]        (dev)                   run dev server # hot-reload for pages, scripts, styles [DEFAULT]
+  production   (prod)                  run build and starts static server # optional, default, no hot reload on changes
   build        (b)                     run build
   deploy       (d)       [preset]      deploy site to server
   new          (n)       [site-name]   generate new site
