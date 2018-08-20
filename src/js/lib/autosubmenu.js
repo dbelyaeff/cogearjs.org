@@ -2,7 +2,7 @@ export default class AutoSubmenu {
 	constructor(options){
 		let defaults = {
 			activeLinkSelector: "aside.menu a.is-active",
-			headersSelector: "section > h1"
+			headersSelector: "article > h1"
 		}
 		this.options = options ? Object.assign(defaults,options) : defaults
 		this.build()

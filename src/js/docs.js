@@ -30,10 +30,10 @@ let init = ()=>{
   new AutoSubmenu()
   const anchors = new Anchors()
   anchors.init().then(()=>{
-    new SmoothScroll('section a[href*="#"]')
+    new SmoothScroll('article a[href*="#"]')
   })
 	new ScrollSpy({
-		selector: "section > h1",
+		selector: "article > h1",
 		linkSelector: "aside.menu a[href*='#']",	
 		offset: 100,
 		throttle: 50

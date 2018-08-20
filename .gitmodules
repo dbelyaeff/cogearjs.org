@@ -1,3 +1,6 @@
 [submodule "plugins/youtube"]
 	path = plugins/youtube
 	url = https://github.com/codemotion/cogear-plugin-youtube
+[submodule "plugins/compressor"]
+	path = plugins/cogear-plugin-compressor
+	url = https://github.com/codemotion/cogear-plugin-compressor

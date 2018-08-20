@@ -18,7 +18,7 @@ let burger = () => {
           if(!$nav.classList.contains('scroll-active')) $nav.classList.toggle('active');
         }
         $target.classList.toggle('is-active')
-        $target.classList.toggle('slideInRight');
+        $target.classList.toggle('fadeInDown');
       });
     });
   }
