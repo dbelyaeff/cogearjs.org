@@ -4,3 +4,4 @@ yarn.*
 .DS_Store
 **/.DS_Store
 public
+.cache-loader
