@@ -4,7 +4,7 @@ description: Cogear.JS themes documentation.
 layout: docs
 ---
 # Basics
-Themes **provide [layouts](/docs/workflow#layouts)** and can be used to **load additional assets** _(scripts, styles, fonts, etc)_.
+Themes **provide [layouts](/docs/layouts)** and can be used to **load additional assets** _(scripts, styles, fonts, etc)_.
 
 # Installation
 

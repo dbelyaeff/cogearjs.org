@@ -31,10 +31,23 @@ All in all it's usual [Webpack](https://webpack.js.org) config. You can edit it 
 
 If you have some questions, please, take a closer look [to the concepts](https://webpack.js.org/concepts/) in [Webpack](https://webpack.js.org) documentation.
 
-# Hooking configs
+# Plug in
 
 As you've noticed config files returns a function which accepts system instasnce as `cogear` argument.
 
 This means that configs are called from inside the system build process.
 
-You may use `webpackProd` of `webpackDev` hook in your [plugin](/docs/plugins) to change the webpacks config.
+You may use `webpack.config` event in your [plugin](/docs/plugins) to change the webpacks config.
+```javascript
+// ./cogear-plugin-webpack-awesome/plugin.js
+module.exports = {
+	appy(){
+		cogear.on('webpack.config',(webpackConfig)=>{
+			// Check mode
+			if(cogear.mode == 'development){ 
+				// Do whatever your need
+			}
+		})
+	}
+}
+```

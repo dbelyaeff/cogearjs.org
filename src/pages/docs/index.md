@@ -16,16 +16,16 @@ Provides awesome hot reloading experience in `development` mode.
 </article>
 
 ## Features
-* <i class="fab fa-js" style="color:#5e0ce5"></i> **Modern technology stack** <br>Build modern static websites with bundled scripts and styles.<br>Rapidly prototype and instantly deploy to the server.<br>
+* 🖥  **Modern stack technologies** <br>Build modern static websites with bundled scripts and styles.<br>Rapidly prototype and instantly deploy to the server.<br>
 Use **any modern frontend stack** (**webpack** bundled) – [Vue.JS](https://vuejs.org), [React](https://reactjs.org), [Angular](https://angular.io), [Ember](https://emberjs.org), etc.
 * 🚀  **Blazing fast and reliable**<br>
 Performs nearly 1.000 pages per second (depends on the pages content and raw computer processor power).<br>
  Being online. Server can handle thousands requests per seconds to serve static files (even on tiny VPS).
-* <i class="fas fa-database" style="color: rgb(41.5%, 46%, 41.5%)"></i> **For any hosting**<br>
+* 📦 **For any hosting**<br>
 Doesn't requires **any database** (data stored in flat files) and works on **any hosting** (as it produces *static html and assets files*).
-* <i class="fas fa-shipping-fast" style="color: orange"></i> **Deploy built in**<br>
+* 🚚  **Deploy built in**<br>
 [Create a preset](/docs/deploy) and update your site to the server via FTP, SFTP or even `rsync`.
-* <i class="fas fa-lock"></i> **Secure. No updates needed**<br> 
+* 🔓 **Secure. No updates needed**<br> 
 Just forget about annoying regular update from usual CMS.<br>
 It's **100% secure** for hacking because there is no backend after being deployed to the server.
 * <i class="fab fa-osi" style="color: green"></i> **Free. Open Sourced**<br>
