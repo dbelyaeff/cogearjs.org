@@ -1,9 +1,6 @@
 ---
 title: License
 description: Cogear.JS licensing
-layout: docs
-js:
-	- js/docs.js
 ---
 # For personal usage
 

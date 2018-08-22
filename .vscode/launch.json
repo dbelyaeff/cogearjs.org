@@ -1,0 +1,32 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Production",
+			"program": "/usr/local/bin/cogear",
+			"args": "production",
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Dev",
+			"program": "/usr/local/bin/cogear",
+			"args": ["-n"],
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Build",
+			"program": "/usr/local/bin/cogear",
+			"args": ["build"],
+			"console": "integratedTerminal",
+			"internalConsoleOptions": "neverOpen"
+		},
+	]
+}

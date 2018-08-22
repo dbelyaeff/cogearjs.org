@@ -6,24 +6,8 @@ mixin link(href,text)
 				block
 doctype html
 head
+	include includes/header
 	block head
-		title= title + " | Documentation | Cogear.JS - modern static websites generator"
-		meta(name="viewport" content="width=device-width, height=device-height, initial-scale=1, minimum-scale=1.0, maximum-scale=1")
-		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-		link(rel="shortcut icon" href="~favicon.png" type="image/png")
-		meta(name="description" content=description)
-		meta(name="keywords" content="cogear,webpack,node,javascript,markdown,generator,website,hot-reload,themes,plugins,github")
-		meta(property="og:title" content=title)
-		meta(property="og:type" content="website")
-		meta(property="og:url" content="https://cogearjs.org/")
-		meta(property="og:description" content=description)
-		meta(property="og:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true")
-		meta(name="twitter:card" content="summary")
-		meta(name="twitter:title" content=title)
-		meta(name="twitter:creator" content="@cogearjs")
-		meta(name="twitter:description" content=description)
-		meta(name="twitter:image" content="https://github.com/codemotion/cogear-storage/blob/master/images/cogearjs.jpg?raw=true")
-		meta(name="theme-color" content="#662D8C")
 body
 	block content
 		.navigation
@@ -57,6 +41,7 @@ body
 						+link("docs/webpack","Webpack")
 						+link("docs/deploy","Deploy")
 						+link("docs/license","License")
+						+link("docs/changes","Changes")
 						+link("docs/support","Support")
 				article.markdown-body
 					!= content
@@ -64,4 +49,5 @@ body
 			footer
 				p#copyleft.
 					Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018
+	include includes/footer
 					

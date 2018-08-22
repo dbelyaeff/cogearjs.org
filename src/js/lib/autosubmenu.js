@@ -13,6 +13,7 @@ export default class AutoSubmenu {
 			return
 		}
 		let headers = document.querySelectorAll(this.options.headersSelector)
+		if(!headers.length) return
 		let ul = document.createElement("ul")
 		ul.classList.add('animated')
 		ul.classList.add('fadeInLeft')

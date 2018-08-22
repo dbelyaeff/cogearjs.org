@@ -1,9 +1,6 @@
 ---
 title: Webpack
-layout: docs
 description: Cogear.JS webpack info.
-js:
-	- js/docs.js
 ---
 # Basics
 

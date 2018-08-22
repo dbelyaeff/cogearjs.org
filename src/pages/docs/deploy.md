@@ -1,9 +1,6 @@
 ---
 title: Deploy
 description: How to deploy with Cogear.JS
-layout: docs
-js:
-	- js/docs.js
 ---
 # Basics
 
@@ -28,8 +25,7 @@ It can be stored either in `config.yaml` section called `deploy` or in standalon
 
 Example: `./config.yaml`
 ```yaml
-site:
-  title: Cogear.JS – modern static websites generator
+title: Cogear.JS – modern static websites generator
 theme: default
 deploy:
   production:
@@ -78,6 +74,6 @@ Start deploying with:
 
 If no preset is called, **the first one** will be fired (the highest one in `yaml` config).
 
-![deploy](~images/docs/workflow/deploy.svg)
+![deploy](/images/docs/workflow/deploy.svg)
 
 After deploy is done your site will br available online.

@@ -9,3 +9,8 @@ deploy:
     user: cogear
     commands: "-avz --delete --progress --quiet"
     path: /home/cogear/www/cogearjs.org/
+pages:
+  ^docs/:
+    layout: docs
+    js:
+      - js/docs.js

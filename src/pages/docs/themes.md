@@ -2,8 +2,6 @@
 title: Themes
 description: Cogear.JS themes documentation.
 layout: docs
-js:
-	- js/docs.js
 ---
 # Basics
 Themes **provide [layouts](/docs/workflow#layouts)** and can be used to **load additional assets** _(scripts, styles, fonts, etc)_.
@@ -121,7 +119,7 @@ If you located in project root, theme will be generated in `./themes` folder.
 If you are not, theme will be generated in __current dir__  (in case you're building npm package).
 
 
-![generator](~images/docs/themes/generator.svg)
+![generator](/images/docs/themes/generator.svg)
 
 It will automatically build basic file structure for you.
 

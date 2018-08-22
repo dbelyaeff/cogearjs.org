@@ -1,9 +1,6 @@
 ---
 title: Workflow
 description: Cogear.JS main workflow – how it works.
-layout: docs
-js:
-	- js/docs.js
 ---
 # Basics
 **Cogear.JS** is a static websites generator. It means that it compiles `source` folder data to static html and assets files to the `output` folder.
@@ -29,13 +26,22 @@ Parse metadata with [`yaml-front-matter`](https://github.com/spatie/yaml-front-m
 Assets are: `js`,`coffee`,`css`,`sass`,`scss`,`stylus`,`less`,`Vue`,`jsx`,`fonts`,`images`.
 7. Done.
 
+# Speed
+Build speed is based on pages and assets count.
 
+One page is about _10-100ms_ to render (depends on size and format).
+
+Webpack processing also depends on imported modules count.
+
+`Development` mode is also faster then `Production` or `Build` because:
+1. It doesn't compress assets.
+2. It doesn't minify assets.
+3. It stores all files in memory instead of filesystem.
 
 ## Config
 Config is a simple JSON-file located at `./config.yaml`.
 ```yaml
-site:
-  title: Cogear.JS – modern static websites generator
+title: Cogear.JS – modern static websites generator
 theme: default
 ```
 
@@ -61,7 +67,7 @@ This mode peforms:
 1. Build pages and watch for changes.
 2. Start [`webpack-dev-server`](https://github.com/webpack/webpack-dev-server) which will instantly update in-browser pages, scripts and styles on the fly with `hot-reload` module.
 
-![production](~images/docs/workflow/dev.svg)
+![production](/images/docs/workflow/dev.svg)
 
 It handles all assets in memory (no output in real file system, don't panic). 
 
@@ -74,7 +80,7 @@ This mode performs:
 2. Assets compilation and injection to pages with [Webpack](https://webpack.js.org).
 3. Starting local server to check out the results.
 
-![production](~images/docs/workflow/production.svg)
+![production](/images/docs/workflow/production.svg)
 
 
 ## Build mode
@@ -84,7 +90,7 @@ This mode performs:
 
 Only build pages and perform Webpack assets compilation.
 
-![production](~images/docs/workflow/build.svg)
+![production](/images/docs/workflow/build.svg)
 
 > It should be called __before__ [deploy](/docs/deploy) process in order output files to be built.
 
@@ -95,7 +101,7 @@ Only build pages and perform Webpack assets compilation.
 
 Fires deploy process. 
 
-![deploy](~images/docs/workflow/deploy.svg)
+![deploy](/images/docs/workflow/deploy.svg)
 
 More info at [Deploy](/docs/deploy) page.
 
@@ -373,7 +379,7 @@ Images paths in layouts and pages should be prefixed with `~` to be resolved cor
 ```markdown
 # About
 
-![me](~images/me.jpg)
+![me](/images/me.jpg)
 ```
 In this case prefixed image will be resolved from `./src/images/me.jpg`.
 

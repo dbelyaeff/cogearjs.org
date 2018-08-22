@@ -1,9 +1,6 @@
 ---
 title: Plugins
 description: Cogear.JS plugins system documentation.
-layout: docs
-js:
-	- js/docs.js
 ---
 # Basics
 
@@ -119,22 +116,24 @@ List of all hooks available in the system core `./lib/cogear.js`:
 ```javascript
 module.exports = class Cogear {
 	constructor() {
-		...
+		// Set cogear as global variable
+		global.cogear = this
+		this.baseDir = path.dirname(__dirname)
 		this.hooks = {
 			cli: new SyncHook(["defaults"]),
 			banner: new SyncHook(),
 			init: new SyncHook(),
 			config: new SyncHook(),
 			death: new SyncHook(),
-			build: new SyncHook(),
+			build: new AsyncSeriesHook(),
+			buildDone: new SyncHook(), // When `cogear build` command is finished
 			clearBuild: new SyncHook(),
-			buildPage: new SyncHook(["file"]),
-			beforeParse: new SyncHook(["parser","file"]),
-			afterParse: new SyncHook(["parser","file","result"]),
-			loadPagesForWebpack: new SyncHook(),
+			buildPage: new AsyncParallelHook(["file"]),
+			beforeParse: new SyncHook(["parser"]),
+			afterParse: new SyncHook(["parser"]),
+			webpack: new SyncHook(["config"]), // To hook config
 			webpackProd: new SyncHook(["startServer"]),
 			webpackDev: new SyncHook(),
-			buildDone: new SyncHook(), // When `cogear build` command is finished
 			help: new SyncHook(["help"]),
 			generators: {
 				init: new SyncHook(["type"]),
@@ -153,7 +152,7 @@ module.exports = class Cogear {
 		.load('build')
 		.load('clearBuild')
 		.load('buildPage')
-		.load('loadPagesForWebpack')
+		.load('openBrowser')
 		.load('webpack.dev')
 		.load('webpack.prod')
 		.load('generators/init')
@@ -193,6 +192,6 @@ To generate new plugin from scratch just use this command:
 
 Where `plugin-name` is a plugin folder and short name.
 
-![generator](~images/docs/plugins/generator.svg)
+![generator](/images/docs/plugins/generator.svg)
 
 It will automatically build basic file structure for you.

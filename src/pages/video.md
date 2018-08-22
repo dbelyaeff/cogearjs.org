@@ -2,7 +2,7 @@
 title: Videos
 layout: video
 js:
-	- js/docs
+	- js/docs.js
 ---
 
 # 1. Getting Started

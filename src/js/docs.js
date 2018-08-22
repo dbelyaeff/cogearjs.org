@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded',()=>{
 	let scripts = document.querySelectorAll('script')
 	let styles = document.querySelectorAll('link[rel="stylesheet"]')
 	scripts.forEach((script)=>{
-		// script.dataset.turbolinksTrack = "true"
+		script.dataset.turbolinksTrack = "true"
 		script.dataset.turbolinksPermanent = "true"
 	})
 	styles.forEach((style)=>{
-		// style.dataset.turbolinksTrack = "true"
+		style.dataset.turbolinksTrack = "true"
 		style.dataset.turbolinksPermanent = "true"
 	})
 })

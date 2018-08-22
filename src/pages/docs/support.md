@@ -2,8 +2,6 @@
 title: Support
 description: Cogear.JS support options.
 layout: docs
-js:
-	- js/docs.js
 ---
 # Link
 If you want to support **Cogear.JS**, please leave a link to the official site in your site footer:

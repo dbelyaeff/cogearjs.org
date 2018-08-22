@@ -1,8 +1,6 @@
 ---
 title: Getting Started
 description: Getting Started guide for Cogear.JS
-layout: docs
-js: ['js/docs.js']
 ---
 # About
 
@@ -92,7 +90,7 @@ Create a new site via command:
 
 > Preset is a github repo which is being cloned locally. It's just an analog of `git clone` command.
 
-![crafting site](~images/term.svg)
+![crafting site](/images/term.svg)
 
 After that go to site dir:
 ```bash
