@@ -107,82 +107,28 @@ That's it.
 
 > But you don't need to create such a plugin, because it [has already been created](https://github.com/codemotion/cogear-plugin-compressor).
 
-# Hooks
-Hooks are implemented from [`webpack/tapable`](https://github.com/webpack/tapable).
+# Events
+Plugins hooks into the events.
+
+The `cogear` object is available globally, so it can be called in any point of your plugin.
 
 If you are familiar with webpack plugins, there will be nothin new for you.
 
-List of all hooks available in the system core `./lib/cogear.js`:
-```javascript
-module.exports = class Cogear {
-	constructor() {
-		// Set cogear as global variable
-		global.cogear = this
-		this.baseDir = path.dirname(__dirname)
-		this.hooks = {
-			cli: new SyncHook(["defaults"]),
-			banner: new SyncHook(),
-			init: new SyncHook(),
-			config: new SyncHook(),
-			death: new SyncHook(),
-			build: new AsyncSeriesHook(),
-			buildDone: new SyncHook(), // When `cogear build` command is finished
-			clearBuild: new SyncHook(),
-			buildPage: new AsyncParallelHook(["file"]),
-			beforeParse: new SyncHook(["parser"]),
-			afterParse: new SyncHook(["parser"]),
-			webpack: new SyncHook(["config"]), // To hook config
-			webpackProd: new SyncHook(["startServer"]),
-			webpackDev: new SyncHook(),
-			help: new SyncHook(["help"]),
-			generators: {
-				init: new SyncHook(["type"]),
-				site: new SyncHook(),
-				plugin: new SyncHook(),
-				theme: new SyncHook(),
-			},
-			deploy: new SyncHook()
-		}
-		this
-		.load('utils')
-		.load('init')
-		.load('config')
-		.load('help')
-		.load('death')
-		.load('build')
-		.load('clearBuild')
-		.load('buildPage')
-		.load('openBrowser')
-		.load('webpack.dev')
-		.load('webpack.prod')
-		.load('generators/init')
-		.load('generators/site')
-		.load('generators/plugin')
-		.load('generators/theme')
-		.load('autoloader')	
-		.load('deploy')
-		.load('cli')
-	}
-	...
-}
-```
-
-Check actual [`./lib/cogear.js`](https://github.com/codemotion/cogear.js/blob/master/lib/cogear.js) at Github.
-
-As you've mentioned, **Cogear.JS** core is built with hooks and plugins.
+**Cogear.JS** core is built with events and plugins.
 
 And all you have to do in your plugin is to use aproppriate hook:
 
 ```javascript
 module.exports = {
-	apply(cogear){
-		cogear.hooks.webpackProd.tap('My awesome plugin',(config)=>{
-			// Do something with cogear instance and config argument
-			// Hint: cogear.webpackConfig is provided
+	apply(){
+		cogear.on('build.page',(page)=>{
+			// Do something with page
 		})
 	}
 }
 ```
+
+List of available events you can find in the source code or use [search in repo](https://github.com/codemotion/cogear.js/search?q=cogear.on&unscoped_q=cogear.on).
 
 # Generator
 To generate new plugin from scratch just use this command:
@@ -195,3 +141,27 @@ Where `plugin-name` is a plugin folder and short name.
 ![generator](/images/docs/plugins/generator.svg)
 
 It will automatically build basic file structure for you.
+
+# Publish
+
+If you want to share your plugin with **Cogear.JS** community do next:
+
+1. Place it in a standalone folder outside your project git repo and `cd` into it.
+2. Init `npm` or `yarn`.
+```shell
+> npm init
+# or
+> yarn init
+```
+2. Make sure that plugin name is prefixed with `cogear-plugin-` in `package.json`.
+3. Login to npm:
+```shell
+> npm login
+```
+4. Publish:
+```shell
+> npm publish
+```
+5. Done.
+
+Now you plugin is packaged and is available to install for anyone in the world!

@@ -52,17 +52,18 @@ body > .container
 			justify-content: left !important
 		> aside
 			padding: 10px 0 20px;
+			min-width 200px
 			border-right: 1px solid rgba(0,0,0,.1)
 			@media(max-width $breakpoints.tablet)
 				border-bottom 1px solid rgba(0,0,0,.2)
 				margin-bottom 20px
-			@media(min-width: $breakpoints.desktop)
+			@media(min-width: $breakpoints.tablet)
 				position: sticky !important
 				top 10px
 				min-width: 200px
 				overflow auto
 				max-height 100vh
-			@media(max-width: $breakpoints.desktop)
+			@media(max-width: $breakpoints.tablet)
 				margin-right 0 !important
 				width 100%
 			.menu-label
@@ -124,7 +125,7 @@ h1
 	top 0px
 	@media(max-width: $breakpoints.desktop)
 		top 50px
-	padding 5px 0
+	padding 15px 0
 	background #FFF
 h1,h2,h3,h4,h5
 	a:hover
@@ -152,3 +153,6 @@ h1,h2,h3,h4,h5
 				transform translate(0,0) rotate(45deg) 
 .fluid-width-video-wrapper
 	margin 15px 0 20px !important
+pre
+	code
+		z-index 1 !important

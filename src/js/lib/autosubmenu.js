@@ -18,6 +18,7 @@ export default class AutoSubmenu {
 		ul.classList.add('animated')
 		ul.classList.add('fadeInLeft')
 		headers.forEach((header)=>{
+			if(header.innerText == activeLink.innerText) return 
 			let li = document.createElement("li")
 			let a = document.createElement("a")
 			a.href = "#" + header.id
@@ -25,6 +26,6 @@ export default class AutoSubmenu {
 			li.appendChild(a)
 			ul.appendChild(li)
 		})
-		activeLink.parentElement.appendChild(ul)
+		if(ul.querySelectorAll('li').length) activeLink.parentElement.appendChild(ul)
 	}
 }
