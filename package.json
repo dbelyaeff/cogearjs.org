@@ -5,6 +5,9 @@
   "repository": "https://gitlab.com/CuamckuyKot/cogearjs.org",
   "author": "Dmitriy Beliaev <admin@cogear.ru> (https://cogear.org)",
   "license": "MIT",
+  "scripts": {
+    "push-to-checkout": "cogear deploy",
+  },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "animate.css": "^3.7.0",
@@ -16,6 +19,7 @@
     "fitvids": "^2.0.0",
     "github-markdown-css": "^2.10.0",
     "highlight.js": "^9.12.0",
+    "husky": "^0.14.3",
     "lodash": "^4.17.10",
     "p-iteration": "^1.1.7",
     "require-yaml": "^0.0.1",
