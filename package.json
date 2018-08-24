@@ -5,8 +5,10 @@
   "repository": "https://gitlab.com/CuamckuyKot/cogearjs.org",
   "author": "Dmitriy Beliaev <admin@cogear.ru> (https://cogear.org)",
   "license": "MIT",
-  "scripts": {
-    "push-to-checkout": "cogear deploy",
+  "husky":{
+    "hooks": {
+      "post-commit": "cogear deploy"
+    }
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",

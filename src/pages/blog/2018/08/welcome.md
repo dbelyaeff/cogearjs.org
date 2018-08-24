@@ -1,6 +1,6 @@
 ---
 title: Welcome to Cogear.JS blog!
-tags: [news]
+tags: [news,plugins]
 featured_image: https://cogearjs.org/images/cogearjs.jpg
 uri: blog/welcome
 ---
