@@ -1,10 +1,10 @@
-let burger = () => {
+const burger = () => {
   let el = document.querySelector('.navbar-burger')
-  el.addEventListener('click', () => {
-
+  el.addEventListener('click', (e) => {
     // Get the target from the "data-target" attribute
     const target = el.dataset.target;
     const $target = document.getElementById(target);
+    console.log($target.classList)
     $target.classList.toggle('is-active')
     $target.classList.toggle('fadeInDown');
     const $nav = document.getElementById('nav');
@@ -14,11 +14,5 @@ let burger = () => {
       if(!$nav.classList.contains('scroll-active')) $nav.classList.toggle('active');
     }
   });
-
 }
-if(window.Turbolinks){
-  document.addEventListener('turbolinks:load',burger);
-}
-else {
-  document.addEventListener('DOMContentLoaded',burger);
-}
+document.addEventListener(window.Turbolinks ? 'turbolinks:load' : 'DOMContentLoaded',burger);

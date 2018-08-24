@@ -1,0 +1,14 @@
+if paginator
+	nav.paginator(role="navigation" aria-label="pagination")
+		if paginator.prev
+			a.button.paginator-previous(href=`/${paginator.prev}`) 
+				span.icon.is-small
+					i.fas.fa-arrow-left
+				span Prev
+		.paginator-info.
+			Page #{paginator.current} of #{paginator.total}
+		if paginator.next
+			a.button.paginator-next(href=`/${paginator.next}`) 
+				span Next
+				span.icon.is-small
+					i.fas.fa-arrow-right

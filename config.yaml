@@ -14,3 +14,10 @@ pages:
     layout: docs
     js:
       - js/docs.js
+  ^blog:
+    layout: blog
+    js:
+      - js/blog.js
+    author: 
+      name: Dmitry Beliaev
+      github: https://github.com/codemotion

@@ -110,9 +110,9 @@ Well done!
 # Generator
 To generate new theme from scratch just use this command:
 ```bash
-> cogear theme [theme-name]
+> cogear theme [theme-name] [-y]
 ```
-Where `theme-name` is a theme folder and a short name.
+Where `theme-name` is a theme folder and a short name and `-y` is optional flag to say `yes` for any questions.
 
 If you located in project root, theme will be generated in `./themes` folder.
 

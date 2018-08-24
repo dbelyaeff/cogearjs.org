@@ -14,57 +14,6 @@ body
 	min-height 100vh
 .brand
 		font-family: 'Montserrat', sans-serif;
-.navbar
-	z-index 100
-	user-select: none
-	position fixed !important
-	top 0
-	width 100vw
-	background transparent !important
-	transition background 2s ease-out
-	z-index 10
-	a
-		color #FFF !important
-	.navbar-menu.is-active
-		// background: linear-gradient(45deg,alpha(#522262,.7),alpha($purple,.7),alpha($light_purple,.7)) !important
-		// background: linear-gradient(to right,$purple,rgba(148,0,171,0.))
-		box-shadow 0px 3px 5px rgba(0,0,0,.4)
-		z-index 100
-	.navbar-brand 
-		a.logo
-				font-weight: bold; !important
-				display  inline-block
-				transform: translateY(-120%)
-				transition: transform .1s ease-out 0
-				font-family: 'Montserrat', sans-serif;
-				font-size: 1.4em
-				text-shadow: 0px 1px 3px rgba(0,0,0,1)
-	a.navbar-item
-		color #FFF !important
-	a.navbar-item:hover
-			background transparent !important
-			text-decoration underline
-			color #FFF !important
-	&.active
-	&.scroll-active
-		// background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
-		background: linear-gradient(to right,$purple,rgba(148,0,171,0.7)) !important
-		// background-size: 400% 400%;
-		// animation: bg 5s ease infinite;
-		// transition background 2s ease-out 1s
-		.navbar-brand
-		 	// background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
-			a.logo
-				transform: translateY(0)
-				transition transform .5s ease-out .2s
-		div.navbar-item
-			transition color 1s ease-in
-			border-top 1px solid rgba(255,255,255,.6)
-			color #FFF
-			text-align center
-	&.active
-		background: linear-gradient(to right,$purple,rgba(148,0,171,0.7))
-		// background: linear-gradient(45deg,alpha(#522262,.8),alpha($purple,.8),alpha($light_purple,.8)) !important
 #s1
 	width 100vw
 	height 100vh
@@ -127,6 +76,9 @@ body
 			font-size 1.2rem
 			@media(max-width $breakpoints.tablet)
 				font-size 1.1rem
+		a.action
+			transform: translate(0,-10px)
+			display inline-block
 #s2
 	z-index 2
 	background #FFF
@@ -215,12 +167,12 @@ body
 	width 250px !important
 	display inline-block
 	text-align center
-	transition: transform 1s ease-out 1s, box-shadow .3s ease-in-out .5s;
+	transition: transform 1s ease-out 1s, box-shadow .3s ease-in-out .5s !important
 	box-shadow 0px 3px 5px rgba(0,0,0,.3)
 	&:hover
 		color #FFF !important
 		box-shadow 0px 5px 5px rgba(0,0,0,.4)
-		transition: transform 1s ease-out, box-shadow .5s ease-in-out .1s;
+		transition: transform .5s ease-out, box-shadow .5s ease-in-out .1s !important
 		transform translate(0,-10px)
 .spacer
 		margin 30px 0
@@ -264,3 +216,58 @@ body
 #version
 	@media(min-width $breakpoints.desktop)
 		margin-right 20px
+for i in (1..7)
+	.navbar-item:nth-child({i})
+		transform: translateY(-100px);
+		transition: transform .1s cubic-bezier(.45,.34,.63,.99) i*.1s;
+.navbar
+	z-index 100
+	user-select: none
+	position fixed !important
+	top 0
+	width 100vw
+	background transparent !important
+	height: 50px
+	transition background 2s ease-out, height 1s cubic-bezier(.45,.34,.63,.99);
+	z-index 10
+.navbar-menu.loaded
+	.navbar-item
+		transform: translateY(0px);
+.navbar-brand 
+	a.logo
+		font-weight: bold; !important
+		display  inline-block
+		transform: translateY(-120%)
+		transition: transform .1s ease-out 0
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.4em
+		text-shadow: 0px 1px 3px rgba(0,0,0,1)
+
+.fall-down.words {
+  -webkit-transform: rotateZ(-7deg);
+          transform: rotateZ(-7deg);
+  -webkit-transform-origin: 0%;
+          transform-origin: 0%;
+}
+
+.fall-down.words .char {
+  -webkit-animation: slide-down 2s forwards cubic-bezier(0, 1.18, 0.82, 1.02);
+          animation: slide-down 2s forwards cubic-bezier(0, 1.18, 0.82, 1.02);
+  -webkit-animation-delay: calc(.5s + (.1s * var(--char-index)));
+          animation-delay: calc(.5s + (.1s * var(--char-index)));
+  opacity: 0;
+}
+
+@keyframes slide-down {
+  from {
+    -webkit-transform: translate(0,-50%);
+            transform: translate(0,-50%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate(0%,0%);
+            transform: translate(0%,0%);
+    opacity: 1;
+    display: block;
+  }
+}

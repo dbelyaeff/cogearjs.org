@@ -15,8 +15,15 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 import './js/lib/burger.js'
 import './js/lib/version.js'
+import "splitting/dist/splitting.css";
+import "splitting/dist/splitting-cells.css";
+import Splitting from "splitting";
 // import './images/cogearjs.jpg'
 document.addEventListener('DOMContentLoaded',()=>{
+	Splitting()
+	setTimeout(()=>{
+		document.querySelector(".navbar-menu").classList.toggle('loaded')
+	},50)
 	AOS.init()
 	new Typed('.description span', {
 		strings: ["","modern ^500 static ^400 websites ^300  generator^4000", "built with ^1000 Node.JS ^1000 and ^1000 Webpack^4000"],

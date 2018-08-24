@@ -1,0 +1,48 @@
+doctype html
+head
+	if tag
+		- pageTitle = tag[0].toUpperCase() + tag.slice(1)
+	if title
+		- pageTitle=`${title} | Blog | ${cogear.config.title}` 
+	else
+		- pageTitle = `Blog | ${cogear.config.title}` 
+	if paginator && paginator.current > 1
+		- pageTitle = `Page ${paginator.current} | ${pageTitle}`
+	title= pageTitle
+	include includes/header
+	block head
+body
+	block content
+		include includes/nav
+		.container
+			main
+				aside.menu
+					if tags
+						p.menu-label Tags
+						ul.menu-list
+							each t in tags
+								li: a(href=`/blog/tag/${t}` class=`${tag && t == tag ? 'is-active' : ''}`)= t[0].toUpperCase() + t.slice(1)
+							unless posts
+								li#backToBlog: a.back(href="javascript: history.back()") <i class="fas fa-arrow-left"></i> Back to blog
+				section.blog.markdown-body 
+					if tag
+						header#tag
+							h1=`${tag}`
+					include includes/post
+					if posts
+						each post in posts
+							+post(post)
+						include includes/paginator
+					else
+						+post({
+							title: title,
+							author: author,
+							uri: uri,
+							date: date,
+							content: content,
+							teaser: null,
+							tags: tags
+						})
+		script#dsq-count-scr(src="//cogear-js.disqus.com/count.js" async)
+		include includes/footer
+					

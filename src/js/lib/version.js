@@ -1,4 +1,5 @@
 let version = ()=>{
+	if(!document.getElementById('version')) return
 	let version = sessionStorage.getItem('version')
 	if(null === version){
 		fetch('https://raw.githubusercontent.com/codemotion/cogear.js/master/package.json')

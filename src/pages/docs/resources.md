@@ -18,3 +18,7 @@ Just put needed files in `./src/resources` if needed to be copied to the output.
 Example:
 * `./src/resources/images` => `./public/images`
 * `./src/resources/favicon.png` => `./public/favicon.png`
+
+# Watcher
+
+In `development` mode all resources folder are watched for changes. If any file is added, changed or deleted, it will be immediately copied to the `output` folder. 

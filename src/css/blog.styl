@@ -1,0 +1,100 @@
+@import '_vars.styl'
+.blog
+	background rgba(0,0,0,.05)
+
+.markdown-body
+	a
+		color #793c99
+// main
+// 	// flex-direction row-reverse !important
+// 	aside
+// 		border none !important
+.post
+	background #FFF
+	padding 15px
+	box-shadow 0px 1px 3px rgba(0,0,0,.1)
+	&.teaser
+		margin-bottom 50px
+		.post-action
+			margin 0 0 15px 0
+	&.full
+		margin-bottom 15px
+	border-bottom 1px solid rgba(0,0,0,.1)
+	&-meta
+		display flex
+		justify-content space-between
+		align-items center
+		&--left
+			display flex
+	&-author	
+		display flex
+		justify-content center
+		&-avatar
+			img
+				border-radius 3em
+				margin-right 5px
+		&-name
+			font-weight bold
+		margin-right 5px
+	&-tags
+		font-size .95em
+		.tag
+			margin-left 5px
+	&-comments
+		margin 0 0 0 5px
+		i
+			color rgba(0,0,0,.6)
+		a
+			margin 0 5px
+	> header
+		h2
+			margin-top 5px
+	&-published
+		color rgba(0,0,0,.7)
+		i
+			margin 0 5px
+			color rgba(0,0,0,.3)
+		font-size .9em
+	&-content
+		padding 0 0 5px 0
+	&.full
+		@media(min-height $breakpoints.desktop)
+			.post-meta
+				justify-content space-between
+				position sticky
+				top 0
+				z-index 1000
+				padding 10px 0
+				background linear-gradient(to bottom,#FFF 50%,rgba(255,255,255,.3))
+		header h1
+			margin-top 5px
+	&.teaser
+		.post-author
+			font-size .9em
+		.post-meta
+			padding 10px 0 0
+			border-top 1px solid rgba(0,0,0,.1)
+#backToBlog
+	border-top 1px solid rgba(0,0,0,.1)
+.paginator
+	display flex !important
+	align-items center
+	justify-content space-between
+	a
+		background: white !important
+		&:active
+			border-color #793c99 !important
+			outline: none !important
+.paginator-prev
+	order 1
+.paginator-info
+	order 2
+.paginator-next
+	order 3
+#tag
+	h1
+		// padding 10px 0
+		text-transform  capitalize
+		background  transparent
+		margin 10px 0
+		border-bottom 1px solid rgba(0,0,0,.1)

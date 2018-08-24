@@ -5,10 +5,11 @@ version: 1.0.0
 section#s1
 	span
 	header
-		#logo.animated.zoomIn Cogear.JS
-		.description: span
+		#logo(data-splitting="chars" class="fall-down animated zoomIn") Cogear.JS
+		.description.animated.fadeInDown.delay-1s: span
 	
-	a.action(href="/docs/") Get Started &rarr;
+	div.animated.fadeInDown.delay-2s
+		a.action(href="/docs/") Get Started &rarr;
 		//- #version= 'v'+version
 	.scroll-downs: .mousey: .scroller
 section.block#s2

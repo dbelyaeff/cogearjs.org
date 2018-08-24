@@ -6,40 +6,19 @@ mixin link(href,text)
 				block
 doctype html
 head
+	title= title + ' | ' + cogear.config.title
 	include includes/header
 	block head
 body
 	block content
-		.navigation
-			.container
-				nav.navbar(role="navigation" aria-label="main navigation")
-					.navbar-brand 
-						.navbar-item: a(href="/" data-turbolinks="false") COGEAR.JS
-						a.navbar-burger(role="button" aria-label="menu" aria-expanded="false" data-target="menu")
-							span(aria-hidden="true")
-							span(aria-hidden="true")
-							span(aria-hidden="true")
-					.navbar-menu.animated.faster#menu
-						.navbar-start
-							.navbar-item: a(href="/docs") Docs
-						.navbar-end
-							a.navbar-item(href="/blog" data-turbolinks="false") Blog
-							a.navbar-item(href="/video") Videos
-							a.navbar-item(href="https://github.com/codemotion/cogear.js") Github
-							a.navbar-item(href="https://github.com/codemotion/cogear.js/issues") Issues
-							a.navbar-item(href="https://github.com/codemotion/cogear.js/wiki") Wiki
-							a.navbar-item(href="/docs/license") License
+		include includes/nav
 		.container
 			main
 				aside.menu
-					p.menu-label#version v1.0.x
+					p.menu-label Videos
 					ul.menu-list
-						+link("video","Videos")
+						//- +link("video","Videos")
 				article.markdown-body
 					!= content
-		block footer
-			footer
-				p#copyleft.
-					Proudly built with <a href="https://cogearjs.org">Cogear.JS</a> © 2018
-	include includes/footer
+		include includes/footer
 					

@@ -1,0 +1,23 @@
+mixin post(post)
+	article.markdown-body.post.full
+		include meta
+		header: h1= post.title
+		.post-content!= post.content
+		.post-action
+			a.button.is-light.back(href="#") 
+				span.icon.is-small <i class="fas fa-arrow-left"></i> 
+				span Back to blog
+
+	if post.comments !== false
+		#disqus_thread
+		script.
+			var disqus_config = function () {
+			this.page.url = window.location.href;  // Replace PAGE_URL with your page's canonical URL variable
+			this.page.identifier = "cogear-js"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+			};
+			(function() { // DON'T EDIT BELOW THIS LINE
+			var d = document, s = d.createElement('script');
+			s.src = 'https://cogear-js.disqus.com/embed.js';
+			s.setAttribute('data-timestamp', +new Date());
+			(d.head || d.body).appendChild(s);
+			})();

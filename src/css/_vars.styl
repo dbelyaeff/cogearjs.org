@@ -6,7 +6,45 @@ $breakpoints = {
 	tablet: 768px
 	mobile: 400px
 }
+body
+	min-height 100vh
+	display flex
+	flex-direction column
+	> .container
+		flex 1
+.navbar
+	a
+		color #FFF !important
+	&.scroll-active
+		@media(min-width $breakpoints.desktop)
+			height: 70px
+	&.scroll-active.active
+		height: 50px !important
+	&.active
+	&.scroll-active	
+		background: linear-gradient(45deg,#522262,$purple,$light_purple) !important
+		.navbar-brand
+			a.logo
+				transform: translateY(0)
+				transition transform .5s ease-out .2s
+		.navbar-item
+			color #FFF !important
+	&.active
+		background: linear-gradient(to right,$purple,rgba(148,0,171,0.7))
 .navbar-menu
+	a
+		color #FFF !important
+	&.is-active
+		@media(max-width $breakpoints.desktop)
+			background: linear-gradient(to right,$purple,rgba(148,0,171,0.3))
+			.navbar-item
+				transition color 1s ease-in
+				border-top 1px solid rgba(255,255,255,.6)
+				color #FFF
+				font-size 1.2rem
+				text-align center
+			box-shadow 0px 3px 5px rgba(0,0,0,.4)
+		z-index 100
 	a.navbar-item:hover
 		background: transparent !important
 		color: #FFF !important
@@ -20,6 +58,22 @@ $breakpoints = {
 			a.navbar-item:hover
 				color: $purple
 				background: rgba(255,255,255,.1) !important
+.navbar-item
+	a
+		text-decoration none !important
+		position relative
+		&:before
+			transform: scale(0)
+			transition: transform .2s cubic-bezier(.45,.34,.63,.99)
+		&:hover:before
+			height 1px
+			background-color white
+			position absolute
+			left 0
+			bottom 0
+			width 100%
+			content ''
+			transform: scale(1)
 footer
 	background: linear-gradient(45deg,#000,#1a1421)
 	color: #FFF
