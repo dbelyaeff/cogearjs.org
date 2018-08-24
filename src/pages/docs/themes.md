@@ -37,10 +37,9 @@ Install themes with ease:
 
 Edit `./config.yaml` to set up new theme:
 ```yaml
-site:
-  title: Cogear.JS – modern static websites generator
-  description:
-  keywords: 
+title: Cogear.JS – modern static websites generator
+description:
+keywords: 
 theme: bulma
 # or
 theme: cogear-theme-bulma # no difference
