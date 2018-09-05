@@ -16,17 +16,17 @@ Provides awesome hot reloading experience in `development` mode.
 </article>
 
 ## Features
-* 🖥  **Modern stack technologies** <br>Build modern static websites with bundled scripts and styles.<br>Rapidly prototype and instantly deploy to the server.<br>
+* 🖥  **Modern stack of technologies** <br>Build modern static websites with bundled scripts and styles.<br>Rapidly prototype and instantly deploy to the server.<br>
 Use **any modern frontend stack** (**webpack** bundled) – [Vue.JS](https://vuejs.org), [React](https://reactjs.org), [Angular](https://angular.io), [Ember](https://emberjs.org), etc.
 * 🚀  **Blazing fast and reliable**<br>
 Performs nearly 1.000 pages per second (depends on the pages content and raw computer processor power).<br>
- Being online. Server can handle thousands requests per seconds to serve static files (even on tiny VPS).
+ Server can handle thousands requests per second to serve static files (even on tiny VPS).
 * 📦 **For any hosting**<br>
-Doesn't requires **any database** (data stored in flat files) and works on **any hosting** (as it produces *static html and assets files*).
+Doesn't requires **any database** (data stored in flat files) and works with **any hosting** (as it produces *static html and assets files*).
 * 🚚  **Deploy built in**<br>
 [Create a preset](/docs/deploy) and update your site to the server via FTP, SFTP or even `rsync`.
 * 🔓 **Secure. No updates needed**<br> 
-Just forget about annoying regular update from usual CMS.<br>
+Just forget about annoying regular updates from usual CMS.<br>
 It's **100% secure** for hacking because there is no backend after being deployed to the server.
 * <i class="fab fa-osi" style="color: green"></i> **Free. Open Sourced**<br>
 Use it for free. For any needs. Forever.<br>
@@ -104,7 +104,7 @@ Create a new site via command:
 
 ![crafting site](/images/term.svg)
 
-After that go to site dir:
+After that go to site directory:
 ```bash
 cd ~/Sites/site.io
 ```
@@ -118,39 +118,7 @@ And start up **Cogear.JS** in `development` or `production` mode ([learn more](/
 
 # Options
 All available options can be seen via `--help` (or shortcut `-h`) command.
-```bash
-> cogear -h
 
-Usage: cogear [command]
-
-Runs in development mode by default (without [command]).
-
-Options:
-
-  -h, --help          output usage information
-  -s, --src           set source directory, default: ./src
-  -o, --output        set output directory, default: ./public
-  -h, --host          set host for local server, default: localhost
-  -p, --port          set port for local server, default: 9000
-  -o, --open          if set to false, browser will not be opened after build, default: false
-  -v, --version       print current version
-  -w, --verbose       set webpack verbose mode, default: true
-  -y                  yes to all questions, for generators
-
-Commands:
-
-  command   (alias)     [optional]      description
-
-  [dev]        (dev)                              run dev server # w/hot-reload [DEFAULT]
-  production   (prod)                             run build and starts static server # no hot reload
-  build        (b)                                run build
-  deploy       (d)       [preset]                 deploy site to server
-  new          (n)       [site-name]   [-y]       generate new site
-  plugin       (p)       [plugin-name] [-y]       generate plugin boilerplate
-  theme        (t)       [theme-name]  [-y]       generate theme boilerplate
-
-For more information visit:
-https://cogearjs.org
-```
+![help](/images/help.svg)
 
 Let's take a look at the workflow.

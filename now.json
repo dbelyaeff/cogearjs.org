@@ -1,0 +1,7 @@
+{
+	"name": "cogearjs",
+	"public": "public",
+	"clearUrls": true,
+	"directoryListing": false,
+	"renderSingle": true
+}

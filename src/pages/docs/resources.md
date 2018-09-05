@@ -1,4 +1,6 @@
-
+---
+title: Resources
+---
 # Resources
 
 All resources can be divided in two groups:

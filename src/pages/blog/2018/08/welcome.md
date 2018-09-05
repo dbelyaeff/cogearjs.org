@@ -16,9 +16,7 @@ As you can see it's even suitable for blogging! Every blog post can have comment
 
 All blog pages are built automatically and rebuilt when proper content pages are changed, added or deleted.
 
-===
-
-> Posts can even have teaser which is splitted from main content by 3 and more `=`,`:`,`_`,`--` symbol (new line only).
+<!--more-->
 
 To create a blog on your site, please install [`cogear-plugin-blog`](https://github.com/codemotion/cogear-plugin-blog) npm package and follow the instructions in `README.md` file.
 

@@ -5,13 +5,20 @@ version: 1.0.0
 section#s1
 	span
 	header
-		#logo(data-splitting="chars" class="fall-down animated zoomIn") Cogear.JS
+		#logo
+			span.fall-down(data-splitting="chars" ) Cogear.JS
 		.description.animated.fadeInDown.delay-1s: span
 	
 	div.animated.fadeInDown.delay-2s
 		a.action(href="/docs/") Get Started &rarr;
 		//- #version= 'v'+version
 	.scroll-downs: .mousey: .scroller
+secton.block#video
+	.container
+		h2.centered(data-aos="fade-up") Introduction
+		.video(data-aos="zoom-in") !https://youtu.be/gL3W4lA6FP0?rel=0&controls=0
+			//- a(href="https://youtu.be/gL3W4lA6FP0"): <i class="fab fa-youtube"></i>
+			
 section.block#s2
 	.container
 		h2.centered(data-aos="fade-up") How fast can you create a site?	
@@ -27,7 +34,7 @@ section.block#s2
 				header 🚀 Blazing fast
 				p.
 					Generates 1000 pages per second, est.
-					Server serves packed assets and pure html loads a way faster than any dynamic programming language.
+					Static html files are loaded significantly faster than any dynamic programming language scripts.
 			.feature(data-aos="fade-up")
 				header <i class="fab fa-osi" style="color: green"></i> Open Sourced
 				p.
@@ -39,15 +46,15 @@ section.block#s2
 			.feature(data-aos="fade-right")
 				header 🔓 Natively secured
 				p.
-					It's impossible to hack pure html. Never needed to load updates like CMS do. Bulletproof protection for ever.
+					It's impossible to hack static html files. Never needed to load updates like CMS do. Bulletproof protection for ever.
 			.feature(data-aos="fade-up")
 				header <i class="fas fa-layer-group" style="color: orange"></i> Templates polyglot
 				p.
-					Generates pages from <b>Markdown</b>, <b>Pug</b>, <b>EJS</b>, <b>Handlebars</b> or any other node-compiled markup language.
+					Generates pages from <b>Markdown</b>, <b>Pug</b>, <b>EJS</b>, <b>Handlebars</b> or any other node-compiled markup language (by plugins).
 			.feature(data-aos="fade-left")
 				header 🚚  Deploy ready
 				p.
-					Uploads to the server via <b>FTP</b>, <b>SFTP</b> or even <code>rsync</code> built in. Deploys in a seconds. Create presets and use them to speed up your deploy.
+					Upload to the server via <b>FTP</b>, <b>SFTP</b> or even <code>rsync</code> built in. Deploy in a seconds. Create presets and use them to speed up your deploy.
 			.feature(data-aos="fade-right")
 				header <i class="fas fa-database" style="color: silver"></i> No database is required
 				p.
@@ -55,11 +62,11 @@ section.block#s2
 			.feature(data-aos="fade-up")
 				header 📦 Bundled assets
 				p.
-					Assets from different npm packages imported in your scripts are piped into <b>Webpack</b> workflow, minimized and optimized, and even compressed for the production.
+					Assets from different npm packages imported in your scripts are piped into <b>Webpack</b> workflow, minimized and optimized.
 			.feature(data-aos="fade-left")
 				header 📄 Nice docs
 				p.
-					User-friendly <a href="/docs">documentation</a> will help you to learn the basics and to dive into advanced learning.
+					User-friendly <a href="/docs">documentation</a> will help you to learn the basics and to deep dive into advanced knowledge.
 		.spacer(data-aos="flip-right")
 			link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
 			#mc_embed_signup(data-aos="fade-up")

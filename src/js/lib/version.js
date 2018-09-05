@@ -18,4 +18,4 @@ let version = ()=>{
 	}
 }
 document.addEventListener('DOMContentLoaded',version)
-document.addEventListener('turbolinks:load',version)
+// document.addEventListener('turbolinks:load',version)

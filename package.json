@@ -5,7 +5,7 @@
   "repository": "https://gitlab.com/CuamckuyKot/cogearjs.org",
   "author": "Dmitriy Beliaev <admin@cogear.ru> (https://cogear.org)",
   "license": "MIT",
-  "husky":{
+  "husky": {
     "hooks": {
       "post-commit": "cogear deploy"
     }
@@ -35,6 +35,7 @@
     "vue": "^2.5.17"
   },
   "devDependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "eslint": "^5.5.0"
   }
 }

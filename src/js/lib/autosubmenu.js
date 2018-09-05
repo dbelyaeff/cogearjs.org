@@ -5,11 +5,12 @@ export default class AutoSubmenu {
 			headersSelector: "article > h1"
 		}
 		this.options = options ? Object.assign(defaults,options) : defaults
-		this.build()
+		!this.isBuilt && this.build()
+		this.isBuilt = true
 	}
 	build(){
 		let activeLink = document.querySelector(this.options.activeLinkSelector)
-		if(activeLink.parentElement.querySelector('ul')){
+		if(!activeLink || activeLink.parentElement.querySelector('ul')){
 			return
 		}
 		let headers = document.querySelectorAll(this.options.headersSelector)

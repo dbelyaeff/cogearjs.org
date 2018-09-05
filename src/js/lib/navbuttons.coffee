@@ -46,8 +46,8 @@ export default class Navbuttons
 		document.querySelector(".markdown-body").appendChild(el)
 		document.addEventListener "keydown", (e) =>
 			if e.key == 'ArrowRight' && next
-				# window.location.href = next.href
-				window.Turbolinks.visit(next.href)
+				window.location.href = next.href
+				# window.Turbolinks.visit(next.href)
 			if e.key == 'ArrowLeft' && prev
-				# window.location.href = prev.href
-				window.Turbolinks.visit(prev.href)
+				window.location.href = prev.href
+				# window.Turbolinks.visit(prev.href)

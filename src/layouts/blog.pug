@@ -17,11 +17,18 @@ body
 		.container
 			main
 				aside.menu
-					if tags
+					if cogear.blog.tags
 						p.menu-label Tags
 						ul.menu-list
-							each t in tags
-								li: a(href=`/blog/tag/${t}` class=`${tag && t == tag ? 'is-active' : ''}`)= t[0].toUpperCase() + t.slice(1)
+							each t in cogear.blog.tags.sort()
+								- var tagName = t[0].toUpperCase() + t.slice(1)
+								li
+									if tag && t == tag
+										a.is-active(href=`/blog/tag/${t}`)= tagName
+									else if tags && tags.includes(t)
+										a.belongs-to-post(href=`/blog/tag/${t}`)= tagName
+									else
+										a(href=`/blog/tag/${t}`)= tagName
 							unless posts
 								li#backToBlog: a.back(href="javascript: history.back()") <i class="fas fa-arrow-left"></i> Back to blog
 				section.blog.markdown-body 

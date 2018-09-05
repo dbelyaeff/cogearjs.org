@@ -13,6 +13,7 @@ body
 	> .container
 		flex 1
 .navbar
+	will-change: transform
 	a
 		color #FFF !important
 	&.scroll-active
@@ -62,8 +63,10 @@ body
 	a
 		text-decoration none !important
 		position relative
+		display inline-block
 		&:before
 			transform: scale(0)
+			content ''
 			transition: transform .2s cubic-bezier(.45,.34,.63,.99)
 		&:hover:before
 			height 1px
