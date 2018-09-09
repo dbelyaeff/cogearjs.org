@@ -17,8 +17,8 @@ body
 		.container
 			main
 				aside.menu
+					p.menu-label Blog
 					if cogear.blog.tags
-						p.menu-label Tags
 						ul.menu-list
 							each t in cogear.blog.tags.sort()
 								- var tagName = t[0].toUpperCase() + t.slice(1)

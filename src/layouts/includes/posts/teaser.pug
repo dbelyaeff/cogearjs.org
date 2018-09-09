@@ -3,5 +3,9 @@ mixin post(post)
 		header: h2: a(href=`/${post.uri}`)= post.title
 		.post-content!= post.teaser ? post.teaser : post.content
 		div.post-action
-			a.button.is-light(href=`/${post.uri}`) Read more
+			a.button.is-light(href=`/${post.uri}`) 
+				if post.teaser == post.content
+					span Leave a comment
+				else
+					span Read more
 		include meta

@@ -6,14 +6,21 @@ js:
 ---
 # 1. Introduction
 
-!https://youtu.be/gL3W4lA6FP0
+!https://www.youtube.com/watch?v=nDga67P6lag
 
-# 2. Workflow
+# 2. Installation
 
-# 3. Themes
+!https://www.youtube.com/watch?v=UwWsSnFS0g0
 
-# 4. Plugins
+# 3. Creating a new site
 
-# 5. Webpack
+!https://www.youtube.com/watch?v=fweOYQ-_FU0
 
-# 6. Deploy
+# 4. Command line interface and work modes
+
+!https://www.youtube.com/watch?v=7q-tY8ct54I
+
+# 5. Configuration file
+
+!https://youtu.be/hEUgZcoFKWM
+

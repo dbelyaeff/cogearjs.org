@@ -9,7 +9,7 @@ include ../utils
 				datetime(data-published=post.date)= `on ` + prettyDate(post.date)
 		.post-comments
 			i.far.fa-comments
-			a(href=`/${post.uri}#disqus_thread`) 0
+			a(href=`https://cogearjs.org/${post.uri}#disqus_thread`) 0
 	.post-meta--right
 		if post.tags
 			.post-tags
