@@ -1,6 +1,10 @@
 @import '_vars.styl'
 .blog
 	background rgba(0,0,0,.05)
+	flex 1
+aside.menu
+	@media(min-width 768px)
+		max-width 150px
 @media(max-width $breakpoints.tablet)
 	aside.menu
 		margin-bottom 0 !important

@@ -64,6 +64,8 @@ body > .container
 			padding: 10px 0 10px;
 			min-width 200px
 			border-right: 1px solid rgba(0,0,0,.1)
+			@media(min-width $breakpoints.tablet)
+				max-width 200px
 			@media(max-width $breakpoints.desktop)
 				border-bottom 1px solid rgba(0,0,0,.2)
 				margin-bottom 0px
@@ -74,7 +76,8 @@ body > .container
 			@media(min-width: $breakpoints.desktop)
 				position: sticky !important
 				top 10px
-				min-width: 200px
+				// min-width: 200px
+				// max-width: 220px;
 				overflow auto
 				max-height 100vh
 			.menu-label
