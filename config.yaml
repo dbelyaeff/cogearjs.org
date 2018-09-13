@@ -2,11 +2,10 @@ title: Cogear.JS – modern static websites generator
 description:
 keywords: 
 theme: false
-# output: cogearjs
 deploy:
   production:
     type: rsync
-    host: dbelyaev.ru 
+    host: cogearjs.org 
     user: cogear
     commands: "-avz --delete --progress --quiet"
     path: /home/cogear/www/cogearjs.org/
