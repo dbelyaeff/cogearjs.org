@@ -10,3 +10,6 @@
 [submodule "plugins/blog"]
 	path = plugins/blog
 	url = https://github.com/codemotion/cogear-plugin-blog
+[submodule "plugins/vue"]
+	path = plugins/vue
+	url = https://github.com/vuejs/vue-loader.git

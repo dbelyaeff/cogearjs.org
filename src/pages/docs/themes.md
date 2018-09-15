@@ -24,13 +24,13 @@ Install themes with ease:
 
 ## From npm
 ```shell
-> npm install cogear-theme-bulma
+$ npm install cogear-theme-bulma
 # or 
-> yarn add cogear-theme-bulma
+$ yarn add cogear-theme-bulma
 ```
 ## From git
 ```shell
-> git clone https://github.com/codemotion/cogear-theme-bulma ./themes/bulma
+$ git clone https://github.com/codemotion/cogear-theme-bulma ./themes/bulma
 ```
 
 > Themes located in `./themes` folder have a higher priority over npm packaged themes.
@@ -109,7 +109,7 @@ Well done!
 # Generator
 To generate new theme from scratch just use this command:
 ```bash
-> cogear theme [theme-name] [-y]
+$ cogear theme [theme-name] [-y]
 ```
 Where `theme-name` is a theme folder and a short name and `-y` is optional flag to say `yes` for any questions.
 
@@ -129,18 +129,18 @@ If you want to share your theme with **Cogear.JS** community do next:
 1. Place it in a standalone folder outside your project git repo and `cd` into it.
 2. Init `npm` or `yarn`.
 ```shell
-> npm init
+$ npm init
 # or
-> yarn init
+$ yarn init
 ```
 2. Make sure that theme name is prefixed with `cogear-theme-` in `package.json`.
 3. Login to npm:
 ```shell
-> npm login
+$ npm login
 ```
 4. Publish:
 ```shell
-> npm publish
+$ npm publish
 ```
 5. Done.
 

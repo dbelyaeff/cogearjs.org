@@ -4,6 +4,7 @@ import '../css/bulma.sass';
 import 'github-markdown-css/github-markdown.css';
 import '../css/docs.styl';
 import 'animate.css';
+import Vue from 'vue/dist/vue.esm.js';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 import '@fortawesome/fontawesome-free/css/solid.min.css';
@@ -17,11 +18,15 @@ import SmoothScroll from 'smooth-scroll';
 import './lib/burger';
 import './lib/version.js';
 import fitVids from 'fitvids';
+import Search from './components/Search.vue';
 // import Turbolinks from 'turbolinks'
 // import 'turbolinks-animate';
 
 let init = ()=>{
-	
+  new Vue({
+    el: '#search',
+    render: (h)=> h(Search)
+  });
   fitVids();
   hljs.initHighlightingOnLoad();
   document.querySelectorAll('pre code').forEach(block=>{

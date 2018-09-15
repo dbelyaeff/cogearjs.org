@@ -26,9 +26,9 @@ All the plugins are represented in `npm` by packages prefixed with `cogear-plugi
 
 For example if you want to install [`pages-json`](https://www.npmjs.com/package/cogear-plugin-pages-json) plugin which calls appropriate __Webpack__ plugin, you should do the following:
 ```bash
-> npm install cogear-plugin-pages-json
+$ npm install cogear-plugin-pages-json
 # or
-> yarn add cogear-plugin-pages-json
+$ yarn add cogear-plugin-pages-json
 ```
 
 You don't need to enable it manually becase the system core will do it for you.
@@ -183,7 +183,7 @@ List of available events you can find in the source code or use [search in repo]
 # Generator
 To generate new plugin from scratch just use this command:
 ```bash
-> cogear plugin [plugin-name] [-y]
+$ cogear plugin [plugin-name] [-y]
 ```
 
 Where `plugin-name` is a plugin folder and short name and `-y` is optional flag to say `yes` for any questions.
@@ -199,18 +199,18 @@ If you want to share your plugin with **Cogear.JS** community do next:
 1. Place it in a standalone folder outside your project git repo and `cd` into it.
 2. Init `npm` or `yarn`.
 ```shell
-> npm init
+$ npm init
 # or
-> yarn init
+$ yarn init
 ```
 2. Make sure that plugin name is prefixed with `cogear-plugin-` in `package.json`.
 3. Login to npm:
 ```shell
-> npm login
+$ npm login
 ```
 4. Publish:
 ```shell
-> npm publish
+$ npm publish
 ```
 5. Done.
 

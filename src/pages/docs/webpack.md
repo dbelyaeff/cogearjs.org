@@ -15,7 +15,7 @@ Moreover it providers realtime **hot reloading** to implement all the changes th
 Config files both for `production` and `development` modes are located into the main `cogear` package root:
 ```bash
 ./cogear
-├── LICENCE.md
+├── LICENSE.md
 ├── README.md
 ├── bin
 ├── lib

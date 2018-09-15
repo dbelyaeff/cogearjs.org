@@ -81,7 +81,7 @@ When **Cogear.JS** is called from command line it runs in `development` mode.
 
 ## Development mode
 ```bash
-> cogear # runs in devemopment mode by default
+$ cogear # runs in devemopment mode by default
 ```
 This mode peforms:
 1. Build pages and watch for changes.
@@ -93,7 +93,7 @@ It handles all assets in memory (no output in real file system, don't panic).
 
 ## Production mode
 ```bash
-> cogear production # runs in production mode
+$ cogear production # runs in production mode
 ```
 This mode performs:
 1. Build pages.
@@ -105,7 +105,7 @@ This mode performs:
 
 ## Build mode
 ```bash
-> cogear build
+$ cogear build
 ```
 
 Only build pages and perform Webpack assets compilation.
@@ -116,7 +116,7 @@ Only build pages and perform Webpack assets compilation.
 
 ## Deploy mode
 ```bash
-> cogear deploy [preset]
+$ cogear deploy [preset]
 ```
 
 Fires deploy process. 

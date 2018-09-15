@@ -1,7 +1,7 @@
 doctype html
 head
 	if tag
-		- pageTitle = tag[0].toUpperCase() + tag.slice(1)
+		- title = tag[0].toUpperCase() + tag.slice(1)
 	if title
 		- pageTitle=`${title} | Blog | ${cogear.config.title}` 
 	else

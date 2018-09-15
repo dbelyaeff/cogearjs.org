@@ -77,9 +77,9 @@ You may want to use awesome [VSCode](https://code.visualstudio.com) editor.
 # Installation
 To install **Cogear.JS** do next:
 ```bash
-> npm install cogear -g
+$ npm install cogear -g
 # or
-> yarn global add cogear
+$ yarn global add cogear
 ```
 Done. Congratulations!
 
@@ -90,14 +90,14 @@ Now you're ready to build your first site.
 # Usage
 Go to the directory where all your local sites are hosted.
 ```bash
-> cd ~/Sites
+$ cd ~/Sites
 ```
 Create a new site via command:
 ```bash
-> cogear new site.io # where "site" is your site folder name
+$ cogear new site.io # where "site" is your site folder name
 
 # if you have a preset, use it's git repo address as fourth arg
-> cogear new site.io https://github.com/codemotion/cogear-preset-docs
+$ cogear new site.io https://github.com/codemotion/cogear-preset-docs
 ```
 
 > Preset is a github repo which is being cloned locally. It's just an analog of `git clone` command.
@@ -106,14 +106,14 @@ Create a new site via command:
 
 After that go to site directory:
 ```bash
-cd ~/Sites/site.io
+$ cd ~/Sites/site.io
 ```
 
 And start up **Cogear.JS** in `development` or `production` mode ([learn more](/docs/workflow#modes)).
 ```bash
-> cogear # run in develompent mode with hot-reload – by default
+$ cogear # run in develompent mode with hot-reload – by default
 
-> cogear production # build a site and run local server
+$ cogear production # build a site and run local server
 ```
 
 # Options
