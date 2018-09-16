@@ -13,3 +13,6 @@
 [submodule "plugins/vue"]
 	path = plugins/vue
 	url = https://github.com/vuejs/vue-loader.git
+[submodule "plugins/blog-rss"]
+	path = plugins/blog-rss
+	url = https://github.com/codemotion/cogear-plugin-blog-rss

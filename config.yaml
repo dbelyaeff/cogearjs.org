@@ -1,5 +1,6 @@
 title: Cogear.JS – modern static websites generator
-description:
+description: Modern static websites generator built with Node.JS and based on Webpack.
+url: https://cogearjs.org
 keywords: 
 theme: false
 deploy:
