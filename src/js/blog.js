@@ -11,11 +11,11 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import SmoothScroll from 'smooth-scroll';
 import './lib/burger';
 import './lib/version.js';
-import fitVids from 'fitvids';
+// import fitVids from 'fitvids';
 // import Turbolinks from 'turbolinks'
 // import 'turbolinks-animate';
 let init = ()=>{	
-  fitVids();
+  // fitVids();
   hljs.initHighlightingOnLoad();
   document.querySelectorAll('pre code').forEach(block=>{
     hljs.highlightBlock(block);

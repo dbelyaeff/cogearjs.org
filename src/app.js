@@ -17,12 +17,12 @@ import './js/lib/burger';
 import './js/lib/version.js';
 import 'splitting/dist/splitting.css';
 import 'splitting/dist/splitting-cells.css';
-import fitVids from 'fitvids';
+// import fitVids from 'fitvids';
 import Splitting from 'splitting';
 // import './images/cogearjs.jpg'
 document.addEventListener('DOMContentLoaded',()=>{
   Splitting();
-  fitVids();
+  // fitVids();
   setTimeout(()=>{
     document.querySelector('.navbar-menu').classList.toggle('loaded');
   },50);
