@@ -11,8 +11,8 @@ import '@fortawesome/fontawesome-free/css/fontawesome.css';
 import '@fortawesome/fontawesome-free/css/brands.css';
 import Typed from 'typed.js';
 import { throttle } from 'throttle-debounce';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 import './js/lib/burger';
 import './js/lib/version.js';
 import 'splitting/dist/splitting.css';
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   setTimeout(()=>{
     document.querySelector('.navbar-menu').classList.toggle('loaded');
   },50);
-  AOS.init();
+  // AOS.init();
   new Typed('.description span', {
     strings: ['','modern ^500 static ^400 websites ^300  generator^4000', 'built with ^1000 Node.JS ^1000 and ^1000 Webpack^4000'],
     typeSpeed: 50,

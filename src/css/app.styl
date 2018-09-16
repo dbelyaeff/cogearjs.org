@@ -9,7 +9,12 @@ body
 	font-family "Nunito", sans-serif;
 	font-size 100%
 	@media(max-width $breakpoints.mobile)
+		max-width: 100% !important;
+		width: 100vw !important;
+		overflow: hidden;
+		margin: 0;
 		font-size 80% !important
+		min-width: 100vw !important;
 		overflow-x hidden // To avoid scrollbars during aos animation on iPhone SE
 	min-height 100vh
 .brand
@@ -290,4 +295,14 @@ for i in (1..7)
     opacity: 1;
     display: block;
   }
+}
+
+*, *:before, *:after { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.aos-all {
+max-width: 100% !important;
+width: 100% !important;
+width: 100vw !important;
+overflow: hidden;
+margin: 0;
 }
