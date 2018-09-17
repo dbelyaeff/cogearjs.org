@@ -5,31 +5,32 @@ mixin link(href,text)
 			ul.menu-list
 				block
 doctype html
-head
-	title= title + ' | Docs | ' + cogear.config.title
-	include includes/header
-	block head
-body
-	block content
-		include includes/nav
-		.container
-			main
-				aside.menu
-					p.menu-label#version v1.0.x
-					ul.menu-list
-						+link("docs","Getting started")
-						+link("docs/workflow","Workflow")
-						+link("docs/pages","Pages")
-						+link("docs/layouts","Layouts")
-						+link("docs/resources","Resources")
-						+link("docs/themes","Themes")
-						+link("docs/plugins","Plugins")
-						+link("docs/webpack","Webpack")
-						+link("docs/deploy","Deploy")
-						+link("docs/license","License")
-						+link("docs/changes","Changes")
-						+link("docs/support","Support")
-				article.markdown-body
-					!= content
-		include includes/footer
-					
+html(lang="en")
+	head
+		title= title + ' | Docs | ' + cogear.config.title
+		include includes/header
+		block head
+	body
+		block content
+			include includes/nav
+			.container
+				main
+					aside.menu
+						p.menu-label#version v1.0.x
+						ul.menu-list
+							+link("docs","Getting started")
+							+link("docs/workflow","Workflow")
+							+link("docs/pages","Pages")
+							+link("docs/layouts","Layouts")
+							+link("docs/resources","Resources")
+							+link("docs/themes","Themes")
+							+link("docs/plugins","Plugins")
+							+link("docs/webpack","Webpack")
+							+link("docs/deploy","Deploy")
+							+link("docs/license","License")
+							+link("docs/changes","Changes")
+							+link("docs/support","Support")
+					article.markdown-body
+						!= content
+			include includes/footer
+						

@@ -5,20 +5,21 @@ mixin link(href,text)
 			ul.menu-list
 				block
 doctype html
-head
-	title= title + ' | ' + cogear.config.title
-	include includes/header
-	block head
-body
-	block content
-		include includes/nav
-		.container
-			main
-				aside.menu
-					p.menu-label Videos
-				//- 	ul.menu-list
-				//- 		//- +link("video","Videos")
-				article.markdown-body
-					!= content
-		include includes/footer
+html(lang="en")
+	head
+		title= title + ' | ' + cogear.config.title
+		include includes/header
+		block head
+	body
+		block content
+			include includes/nav
+			.container
+				main
+					aside.menu
+						p.menu-label Videos
+					//- 	ul.menu-list
+					//- 		//- +link("video","Videos")
+					article.markdown-body
+						!= content
+			include includes/footer
 					

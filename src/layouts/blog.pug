@@ -1,5 +1,6 @@
 doctype html
-head
+html(lang="en")
+	head
 	if tag
 		- title = tag[0].toUpperCase() + tag.slice(1)
 	if title
@@ -11,7 +12,7 @@ head
 	title= pageTitle
 	include includes/header
 	block head
-body
+	body
 	block content
 		include includes/nav
 		.container

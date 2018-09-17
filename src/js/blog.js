@@ -1,3 +1,4 @@
+import '@babel/polyfill';
 import '../fonts/google-fonts-1534515193737.css';
 import '../fonts/google-fonts-1534515231222.css';
 import 'github-markdown-css/github-markdown.css';
