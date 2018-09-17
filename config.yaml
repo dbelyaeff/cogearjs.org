@@ -24,3 +24,5 @@ pages:
     author: 
       name: Dmitry Beliaev
       github: https://github.com/codemotion
+feed:
+  image_url: https://cogearjs.org/images/cogearjs.jpg
