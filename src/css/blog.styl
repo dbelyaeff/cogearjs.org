@@ -3,12 +3,15 @@
 	background rgba(0,0,0,.05)
 	flex 1
 aside.menu
-	@media(min-width 768px)
+	@media(min-width 769px)
 		max-width 150px
 @media(max-width $breakpoints.tablet)
 	aside.menu
+		order 2
 		margin-bottom 0 !important
 		padding-bottom 0 !important
+	.markdown-body
+		order 1
 	.blog
 		padding 10px !important
 		h1
