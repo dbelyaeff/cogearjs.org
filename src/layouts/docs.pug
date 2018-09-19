@@ -16,7 +16,15 @@ html(lang="en")
 			.container
 				main
 					aside.menu
-						p.menu-label#version v1.0.x
+						input#menu-toggle(type="checkbox")
+						p.menu-label
+							span#version v1.0.x
+							label.show(for="menu-toggle")
+								span Show
+								i.fas.fa-toggle-off
+							label.hide(for="menu-toggle")
+								span Hide
+								i.fas.fa-toggle-on
 						ul.menu-list
 							+link("docs","Getting started")
 							+link("docs/workflow","Workflow")

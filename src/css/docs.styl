@@ -63,9 +63,50 @@ body > .container
 		@media(max-width 1120px) and (min-width: 768px)
 			justify-content: left !important
 		> aside
-			padding: 10px 0 10px;
+			padding: 0px 0 10px;
 			min-width 200px
+			user-select none
 			border-right: 1px solid rgba(0,0,0,.1)
+			input
+				display none
+			@media(max-width $breakpoints.tablet)
+				padding-bottom 0 !important
+				.menu-list
+					display none
+				label.hide
+					display none
+				input:checked 
+					& ~ .menu-list
+						display block
+						margin-bottom  10px
+					& ~ p label.hide
+						display block
+					& ~ p label.show
+						display none
+			.menu-label
+				display flex
+				flex-direction row
+				justify-content space-between
+				div
+					display inline-block
+			label
+				padding 0 15px 0 0
+				cursor pointer
+				@media(min-width $breakpoints.tablet+1)
+					display none
+				i.fas
+					margin 0 3px
+					&.fa-toggle-on
+						color #CCC
+					&.fa-toggle-off
+						color #7f3f9d
+
+				// font-size 1.5em
+				// padding 0 18px 0 0
+			// @media(max-width $breakpoints.mobile)
+			// 	display none
+			// 	&.active
+			// 		display block
 			@media(min-width $breakpoints.tablet + 1)
 				max-width 200px
 			@media(max-width $breakpoints.desktop)
