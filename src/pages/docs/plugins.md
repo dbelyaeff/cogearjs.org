@@ -183,10 +183,10 @@ List of available events you can find in the source code or use [search in repo]
 # Generator
 To generate new plugin from scratch just use this command:
 ```bash
-$ cogear plugin [plugin-name] [-y]
+$ cogear plugin [plugin-name]
 ```
 
-Where `plugin-name` is a plugin folder and short name and `-y` is optional flag to say `yes` for any questions.
+Where `plugin-name` is a plugin folder and short name and `` is optional flag to say `yes` for any questions.
 
 ![generator](/images/docs/plugins/generator.svg)
 

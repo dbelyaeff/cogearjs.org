@@ -6,7 +6,7 @@ theme: false
 deploy:
   production:
     type: rsync
-    host: cogearjs.org 
+    host: 37.143.8.212 
     user: cogear
     commands: "-avz --delete --progress --quiet"
     path: /home/cogear/www/cogearjs.org/

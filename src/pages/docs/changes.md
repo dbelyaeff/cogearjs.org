@@ -3,6 +3,10 @@ title: Changes log
 ---
 ## Changelog
 
+### 1.2.16
+
+* Remove -y option from CLI. If name is given no questions would be asked by interface.
+
 ### 1.2.2
 * Moved to Commander.JS for cli arguments processing.
 * Added nicey WebpackBar to display compiling process.

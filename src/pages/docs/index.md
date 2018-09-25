@@ -95,12 +95,7 @@ $ cd ~/Sites
 Create a new site via command:
 ```bash
 $ cogear new site.io # where "site" is your site folder name
-
-# if you have a preset, use it's git repo address as fourth arg
-$ cogear new site.io https://github.com/codemotion/cogear-preset-docs
 ```
-
-> Preset is a github repo which is being cloned locally. It's just an analog of `git clone` command.
 
 ![crafting site](/images/term.svg)
 
