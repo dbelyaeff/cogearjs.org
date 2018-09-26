@@ -106,7 +106,7 @@ $ cd ~/Sites/site.io
 
 And start up **Cogear.JS** in `development` or `production` mode ([learn more](/docs/workflow#modes)).
 ```bash
-$ cogear # run in develompent mode with hot-reload – by default
+$ cogear # run in development mode with hot-reload – by default
 
 $ cogear production # build a site and run local server
 ```
