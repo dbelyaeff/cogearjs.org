@@ -1,7 +1,7 @@
 ---
 title: Vue.JS plugin
 tags:
-	- plugins
+  - plugins
 ---
 [Vue.JS plugin](https://github.com/codemotion/cogear-plugin-vue/) has been released. It allows developer to import `.vue` [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) (combines in one file: __template__ + __script__ + __style__).
 
@@ -17,7 +17,7 @@ yarn add cogear-plugin-vue
 npm install cogear-plugin-vue
 ```
 
-Plugin will loads up automatically.
+Plugin will be loaded automatically.
 
 # Usage
 
