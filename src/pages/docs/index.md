@@ -22,7 +22,7 @@ Use **any modern frontend stack** (**webpack** bundled) – [Vue.JS](https://vue
 Performs nearly 1.000 pages per second (depends on the pages content and raw computer processor power).<br>
  Server can handle thousands requests per second to serve static files (even on tiny VPS).
 * 📦 **For any hosting**<br>
-Doesn't requires **any database** (data stored in flat files) and works with **any hosting** (as it produces *static html and assets files*).
+Doesn't require **any database** (data stored in flat files) and works with **any hosting** (as it produces *static html and assets files*).
 * 🚚  **Deploy built in**<br>
 [Create a preset](/docs/deploy) and update your site to the server via FTP, SFTP or even `rsync`.
 * 🔓 **Secure. No updates needed**<br> 
