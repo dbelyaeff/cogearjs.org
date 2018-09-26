@@ -140,6 +140,14 @@ body > .container
 								color: black !important
 		> article
 		> section
+			.edit
+				position absolute
+				top 15px
+				@media(min-width 768px)
+					top 30px
+				right 25px
+				z-index 1000
+			position relative
 			font-size 1rem
 			margin-top: 0px
 			flex: 1
@@ -214,3 +222,6 @@ h1,h2,h3,h4,h5
 pre
 	code
 		z-index 1 !important
+.markdown-body
+	h1,h2,h3,h4,h5,h6
+		margin-top 5px

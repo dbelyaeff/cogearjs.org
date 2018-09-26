@@ -39,6 +39,9 @@ html(lang="en")
 							+link("docs/changes","Changes")
 							+link("docs/support","Support")
 					article.markdown-body
+						a.edit.button.is-outlined.is-link.is-small(href=`https://github.com/codemotion/cogearjs.org/edit/master/src/pages/${file}`)
+							span.icon: i.fas.fa-pencil-alt
+							//- span Edit
 						!= content
 			include includes/footer
 						
