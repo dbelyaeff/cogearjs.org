@@ -44,7 +44,7 @@ module.exports = {
 	appy(){
 		cogear.on('webpack.config',(webpackConfig)=>{
 			// Check mode
-			if(cogear.mode == 'development){ 
+			if(cogear.mode == 'development'){ 
 				// Do whatever your need
 			}
 		})
