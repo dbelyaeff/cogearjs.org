@@ -21,13 +21,13 @@ section.block#video
 			
 section.block#s2
 	.container
-		h2.centered(data-aos="fade-up") How fast can you create a site?	
-		.centered
-			img(src="/images/term.svg" data-aos="flip-up" alt="Terminal. Creating site with Cogear.JS in a second.")
-		p.lead.centered(data-aos="zoom-in").
-			In less than a second. <br>
-			All you have left to do is to built and deploy it to the server.
-		.spacer(data-aos="flip-left")
+		//- h2.centered(data-aos="fade-up") How fast can you generate a site?	
+		//- .centered
+		//- 	img(src="/images/term.svg" data-aos="flip-up" alt="Terminal. Creating site with Cogear.JS in a second.")
+		//- p.lead.centered(data-aos="zoom-in").
+		//- 	In less than a second. <br>
+		//- 	All you have left to do is to built and deploy it to the server.
+		//- .spacer(data-aos="flip-left")
 		h2.centered(data-aos="fade-up") <span class="brand">Cogear.JS</span> features:
 		.features
 			.feature(data-aos="fade-right")
@@ -68,23 +68,16 @@ section.block#s2
 				p.
 					User-friendly <a href="/docs">documentation</a> will help you to learn the basics and to deep dive into advanced knowledge.
 		.spacer(data-aos="flip-right")
-			link(href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css")
-			#mc_embed_signup(data-aos="fade-up")
-				h2.centered(data-aos="fade-up") Join our newsletter
-				form(action="https://cogearjs.us19.list-manage.com/subscribe/post?u=697d87872e2a44b1277ec2d68&amp;id=7040c345d3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank")
-					#mc_embed_signup_scroll
-						.mc-field-group
-							label(for="mce-EMAIL") Email
-							input#mce-EMAIL.required.email(type="email" value="" name="EMAIL" required)
-						#mce-responses
-							#mce-error-response.response(style="display:none")
-							#mce-success-response.response(style="display:none")
-						div(style="position: absolute; left: -5000px;" aria-hidden="true")
-							input(type="text" name="b_697d87872e2a44b1277ec2d68_7040c345d3" tabindex="-1" value="")
-						.clear
-							input.action(type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button")
-		.spacer(data-aos="flip-right")
 		p.lead.big.centered(data-aos="zoom-in").
-			Just try it. Install. Make a first site in a minutes.
+			Just try it. Install. Make a first site in a minute.
 		#install(data-aos="flip-down")
-			a.action(href="/docs#installation") How to install &rarr;
+			a.action(href="/docs") How to install &rarr;
+		//- .spacer(data-aos="flip-right")
+section.block#s3
+	h2.centered(data-aos="zoom-in") Join our newsletter. Keep in touch.
+	#revue-embed
+		form#revue-form(action='https://www.getrevue.co/profile/cogear/add_subscriber' method='post' name='revue-form' target='_blank')
+			.revue-form-group
+				input#member_email.revue-form-field(required="required" placeholder='Your email address...' type='email' name='member[email]')
+			.revue-form-actions
+				input.action(type="submit" value="Subscribe" name="member[subscribe]" id="member_submit")
