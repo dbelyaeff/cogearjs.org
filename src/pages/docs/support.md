@@ -10,7 +10,7 @@ Proudly built with <a href="https://cogearjs.org">Cogear.JS</a>
 ```
 # Donate
 
-If **Cogear.JS** helps you to earn money or even if you just want to give thanks me for the work, please donate:
+If **Cogear.JS** helps you to earn money or if you just want to thank me for the work, please donate:
 * **BTC** 1LSVx5LzYQdHiYxaHREbhfbgVtp8umjGDg
 * **ETH** 0xb8A2E9487004Eaf8D1E1096f1472a388402C3163
 * **ETH Classic** 0x80b819D686C820A551BA2C57e45d94152e529ca4
