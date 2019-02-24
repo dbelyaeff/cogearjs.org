@@ -76,4 +76,4 @@ If no preset is called, **the first one** will be fired (the highest one in `yam
 
 ![deploy](/images/docs/workflow/deploy.svg)
 
-After deploy is done your site will br available online.
+After the deployment is done, your site will be available online.
