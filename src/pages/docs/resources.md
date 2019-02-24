@@ -3,7 +3,7 @@ title: Resources
 ---
 # Resources
 
-All resources can be divided in two groups:
+All resources can be divided into two groups:
 * Webpack-compiled
 * Standalone
 
@@ -23,4 +23,4 @@ Example:
 
 # Watcher
 
-In `development` mode all resources folder are watched for changes. If any file is added, changed or deleted, it will be immediately copied to the `output` folder. 
+In `development` mode, all resources folder are watched for changes. If any file is added, changed or deleted, it will be immediately copied to the `output` folder. 
