@@ -3,11 +3,10 @@ title: Changes log
 ---
 ## Changelog
 
-### 1.2.16
-
+### v1.2.16
 * Remove -y option from CLI. If name is given no questions would be asked by interface.
 
-### 1.2.2
+### v1.2.2
 * Moved to Commander.JS for cli arguments processing.
 * Added nicey WebpackBar to display compiling process.
 * Updated performance measurements.
@@ -22,7 +21,6 @@ changes.
 * Resources in dev mode are being linked now (just serve static byexpress from given folders)  instead of copied.
 
 ### v1.1
-
 * Replaced [HTMLWebpackPlugin](https://webpack.js.org/plugins/html-webpack-plugin/) because of its extremly inperformance when page count is over thousand with simple _webpack-compiled_ assets injection.
 * Changed workflow from `Webpack → Build` to `Preload → Webpack → Build`.
 * Make almost all processing operations asynchronously – huge speed performance.<br>Build of __10.000 pages__ _(~ 3 pages per day in 10 years)_ tooks __14s__ now.
