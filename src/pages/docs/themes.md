@@ -144,4 +144,4 @@ $ npm publish
 ```
 5. Done.
 
-Now you theme is packaged and is available to install for anyone in the world!
+Now your theme is packaged and is available to install for anyone in the world!
