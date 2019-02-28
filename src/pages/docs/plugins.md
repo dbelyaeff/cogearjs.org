@@ -214,4 +214,4 @@ $ npm publish
 ```
 5. Done.
 
-Now you plugin is packaged and is available to install for anyone in the world!
+Now your plugin is packaged and is available to install for anyone in the world!

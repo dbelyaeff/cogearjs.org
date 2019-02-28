@@ -27,7 +27,7 @@ In `development` mode watchers are being stared to reflect changes in pages, lay
 
 
 # Process
-To build a static website **Cogear.JS** do next:
+To build a static website with **Cogear.JS** do the steps as follows:
 1. Reads site config from `./config.yaml` (`.js`,`.json` formats are also available).
 2. Searches `src` directory `pages` subfolder for pages. (default: `./src/pages`)
 3. Preload pages. 
@@ -40,7 +40,7 @@ Assets are: `js`,`coffee`,`css`,`sass`,`scss`,`stylus`,`less`,`Vue`,`jsx`,`fonts
 7. Done.
 
 # Speed
-Pages are build asynchronously (from v1.1.0).
+Pages are build asynchronously (from `v1.1.0`).
 
 [Benchmarks](https://github.com/codemotion/cogear-benchmark) show speed 1000 pages per second, est.
 

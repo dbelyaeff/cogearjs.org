@@ -9,7 +9,7 @@ description: Getting Started guide for Cogear.JS
 
 It's inspired by [Jekyll](https://jekyllrb.com) and others, but built on the top of the latest frontend technologies.
 
-Provides awesome hot reloading experience in `development` mode.
+**Cogear.JS** provides an awesome hot reloading experience in `development` mode.
 
 <article class="message is-info is-desktop">
   <div class="message-body">Use arrow keys <button>&larr;</button> <button>&rarr;</button> to navigate through the docs.</div>
@@ -31,9 +31,9 @@ It's **100% secure** for hacking because there is no backend after being deploye
 * <i class="fab fa-osi" style="color: green"></i> **Free. Open Sourced**<br>
 Use it for free. For any needs. Forever.<br>
 
-[Github Pages](https://pages.github.com) (or any similar project) you can host generated site **for free**.
+At [Github Pages](https://pages.github.com) (or any similar project) you can host generated sites **for free**.
 
-### What it can be used for:
+### It can be used for
 * Rapid site prototyping 
 * Portfolio site
 * Company site
@@ -59,7 +59,7 @@ Of course you can try, but it has to be modern [SPA](https://en.wikipedia.org/wi
 
 # Requirements
 
-You have [Node.JS](https://nodejs.org) (9.x or higher) and [NPM](https://www.npmjs.com) (usually comes together) to be installed.
+[Node.JS](https://nodejs.org) (9.x or higher) and [NPM](https://www.npmjs.com) (usually comes together) need to be installed.
 
 [Download and install.](https://nodejs.org/en/download/)
 
@@ -67,12 +67,12 @@ The latest version (v10.9.0) is recommended.
 
 You can also use [Yarn](https://yarnpkg.com) instead of [NPM](https://www.npmjs.com).
 
-**Cogear.JS** runs on:
+**Cogear.JS** runs on
 * Mac
 * Linux
 * Windows
 
-You may want to use awesome [VSCode](https://code.visualstudio.com) editor.
+You may want to use the awesome [VSCode](https://code.visualstudio.com) editor.
 
 # Installation
 To install **Cogear.JS** do next:
@@ -116,4 +116,4 @@ All available options can be seen via `--help` (or shortcut `-h`) command.
 
 ![help](/images/help.svg)
 
-Let's take a look at the workflow.
+Let's take a look at the [workflow](/docs/workflow).

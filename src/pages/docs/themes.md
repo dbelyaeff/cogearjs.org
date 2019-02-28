@@ -124,7 +124,7 @@ It will automatically build basic file structure for you.
 
 # Publish
 
-If you want to share your theme with **Cogear.JS** community do next:
+If you want to share your theme with the **Cogear.JS** community do the following:
 
 1. Place it in a standalone folder outside your project git repo and `cd` into it.
 2. Init `npm` or `yarn`.
@@ -144,4 +144,4 @@ $ npm publish
 ```
 5. Done.
 
-Now you theme is packaged and is available to install for anyone in the world!
+Now your theme is packaged and is available to install for anyone in the world!

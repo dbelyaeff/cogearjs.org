@@ -1,12 +1,12 @@
 ---
 title: Pages
-description: Pages are the main data structure units of Cogear.JS.
+description: Pages are the main units of Cogear.JS.
 keywords: Cogear.JS, pages, workflow, how to
 ---
 # Pages
-Pages are the main structure units of **Cogear.JS**.
+Pages are the main units of **Cogear.JS**.
 
-They must be located in `pages` subfolder of the `src` directory (default: `./src/pages`).
+They must be located in the `pages` subfolder of the `src` directory (default: `./src/pages`).
 
 # Formats
 

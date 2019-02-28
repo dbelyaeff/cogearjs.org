@@ -39,9 +39,9 @@ description: Cogear.JS licensing
 
 # For business
 
-If you are a company that desires to use **Cogear.JS** in your buisness, please contact me at [admin@cogear.org](mailto:admin@cogear.org).
+If you are a company that desires to use **Cogear.JS** in your business, please contact me at [admin@cogear.org](mailto:admin@cogear.org).
 
-You can hire me for the workshops or other educational purposes.
+You can hire me for workshops or other educational purposes.
 
 # For education
 
